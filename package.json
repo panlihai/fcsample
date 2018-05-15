@@ -1,0 +1,39 @@
+{
+  "name": "fcsample",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.config.json --host=0.0.0.0 --port=4210",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "fccomponent": "^0.6.22",
+    "ngx-monaco-editor": "^4.1.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.6.7",
+    "@angular/compiler-cli": "^5.1.0",
+    "@angular/language-service": "^5.1.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
+  }
+}
