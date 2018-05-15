@@ -3,7 +3,7 @@ import { ComponentParent } from '../../componentparent';
 import { ComponentService } from '../../services/component.service';
 import { MenuOptions } from 'fccomponent';
 import { FCEVENT } from 'fccomponent/fc';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'navmenu',
   templateUrl: './navmenu.component.html',

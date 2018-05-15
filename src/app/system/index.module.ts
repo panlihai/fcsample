@@ -10,19 +10,11 @@ import { ErrorComponent } from './components/error/error.component';
 import { LockscreenComponent } from './components/lockscreen/lockscreen.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { MainService } from './services/main.service';
-import { SysdatasourceService } from './services/sysdatasource.service';
-import { SysappService } from './services/sysapp.service';
-import { SysproductService } from './services/sysproduct.service';
-import { SysroleuserService } from './services/sysroleauth.service';
-import { SysbackcodeService } from './services/sysbackcode.service';
-import { SyscomponentService } from './services/syscomponent.service';
-import { SysparamService } from './services/sysparam.service';
-import { SysroleService } from './services/sysrole.service';
-import { HomeComponent } from './components/home/home.component';
 import { FclistModule, FctlbModule, FclayoutModule, FcbasicModule, 
   FcadModule, FcmodalModule, FcsearchModule, FctabModule, FcchartModule } from 'fccomponent';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   imports: [
     CommonModule,

@@ -3,9 +3,9 @@ import { ComponentService } from '../../services/component.service';
 import { Component, OnInit, AfterContentInit, OnChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ParentComponent, TimelineOptions } from 'fccomponent';
-import { LayoutService } from '../../../system/services/layout.service';
 import { eventNames } from 'cluster';
 import { FCEVENT } from 'fccomponent/fc';
+import { LayoutService } from '../../../../system/services/layout.service';
 @Component({
   selector: 'templatehome',
   templateUrl: './templatehome.component.html',
