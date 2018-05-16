@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'long',
   templateUrl: './long.component.html',
-  styles: [``]
+  styles: [`
+  .long_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class LongComponent extends ComponentParent {
    //大小

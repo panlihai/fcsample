@@ -1,17 +1,17 @@
 <!-- 气泡 fc-popover -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="气泡卡片" fcheader fcSubtitle="点击/鼠标移入元素，弹出气泡式的卡片浮层。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="气泡卡片" fccontent1 fcSubtitle="点击/鼠标移入元素，弹出气泡式的卡片浮层。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当目标元素有进一步的描述和相关操作时，可以收纳到卡片中，根据用户的操作行为进行展现。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>
             <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup id="basic" fcTitle="基本" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="popover_bottom">
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容" fcButton="滑过"></fc-popover>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。" 
@@ -20,7 +20,7 @@
                    </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="trigger" fcTitle="触发方式" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="popover_bottom">
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="滑过" class="triggerview"></fc-popover>
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="聚焦"  class="triggerview"></fc-popover>
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="点击"  class="triggerview"></fc-popover>
@@ -30,7 +30,7 @@
                     [fccode]="basicjs"[fcstyle]="basicstyle"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="close" fcTitle="关闭" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="popover_bottom">
                         <fc-popover fcShowClose="true" fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="滑过" class="triggerview"></fc-popover>
                         <fc-popover fcShowClose="true" fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="聚焦" class="triggerview"></fc-popover>
                         <fc-popover fcShowClose="true" fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="点击" class="triggerview"></fc-popover>
@@ -40,7 +40,7 @@
                     [fccode]="basicjs"[fcstyle]="basicstyle"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="position" fcTitle="位置方向" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="popover_bottom">
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="上" fcPlacement="top" class="triggerview"></fc-popover>
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="左" fcPlacement="left" class="triggerview"></fc-popover>
                         <fc-popover fcTitle="气泡标题" fcContent="气泡内容气泡内容气泡内容" fcTrigger="hover" fcButton="右" fcPlacement="right" class="triggerview"></fc-popover>

@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'app-textarea',
   templateUrl: './textarea.component.html',
-  styles: [``]
+  styles: [`
+  .textarea_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class TextareaComponent extends ComponentParent {
   content: string;

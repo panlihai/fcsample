@@ -56,8 +56,8 @@ export class TlbformComponent extends ComponentParent {
     ]
     ourtlbform(event: FCEVENT) {
       switch (event.eventName) {
-        case 'me':
-        this.mainService.providers.msgService.message("自定义工具栏事件");
+        case 'cardAdd':
+        this.mainService.providers.msgService.message("表单新增记录事件");
         break;
       }
     }
@@ -88,9 +88,8 @@ export class TlbformComponent extends ComponentParent {
    */
   ourtlbform(event: FCEVENT) {
     switch (event.eventName) {
-      case 'me':
-        // console.log("自定义工具栏事件");
-        this.mainService.providers.msgService.message("自定义工具栏事件");
+      case 'cardAdd':
+        this.mainService.providers.msgService.message("表单新增记录事件");
         break;
     }
   }

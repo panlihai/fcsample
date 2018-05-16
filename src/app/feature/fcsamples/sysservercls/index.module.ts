@@ -5,14 +5,6 @@ import { RouterModule } from '@angular/router';
 import { tlbRouters } from './index.route';
 import { FcbasicModule, FclayoutModule, FcadModule, FcnavModule, FclistModule, FctlbModule } from 'fccomponent';
 import { BasedaoclsComponent } from './basedaocls/basedaocls.component';
-import { BaseserviceclsComponent } from './baseservicecls/baseservicecls.component';
-import { CacheutilclsComponent } from './cacheutilcls/cacheutilcls.component';
-import { DateutilsComponent } from './dateutils/dateutils.component';
-import { DynabeanclsComponent } from './dynabeancls/dynabeancls.component';
-import { ParentserviceclsComponent } from './parentservicecls/parentservicecls.component';
-import { RequestmoadlclsComponent } from './requestmoadlcls/requestmoadlcls.component';
-import { ResponsemodalclsComponent } from './responsemodalcls/responsemodalcls.component';
-import { SysserverclsComponent } from './sysservercls/sysservercls.component';
 @NgModule({
   imports: [
     FormsModule,
@@ -29,15 +21,7 @@ import { SysserverclsComponent } from './sysservercls/sysservercls.component';
 
   ],
   declarations: [
-    BasedaoclsComponent,
-    BaseserviceclsComponent,
-    CacheutilclsComponent,
-    DateutilsComponent,
-    DynabeanclsComponent,
-    ParentserviceclsComponent,
-    RequestmoadlclsComponent,
-    ResponsemodalclsComponent,
-    SysserverclsComponent
+    BasedaoclsComponent
   ],
   providers: [
 

@@ -6,7 +6,11 @@ import { FCEVENT } from 'fccomponent/fc';
 @Component({
   selector: 'app-text',
   templateUrl: './text.component.html',
-  styles: [``]
+  styles: [`
+    .text_bottom{
+        margin-bottom:10px;
+    }
+  `]
 })
 export class TextComponent extends ComponentParent {
   content: string = '文本内容';
@@ -45,7 +49,7 @@ export class TextComponent extends ComponentParent {
    `
    //前置标签
    AddonBefore : string = `
-   <fc-text [fcLabel]="'后置标签'" [(ngModel)]="addonbefore" [fcAddonBefore]="'fc-icon-unit'" fcMode="icon"></fc-text>
+   <fc-text [fcLabel]="'前置标签'" [(ngModel)]="addonbefore" [fcAddonBefore]="'fc-icon-unit'" fcMode="icon"></fc-text>
    `
   //后置标签
   AddonAfter: string = `
@@ -53,11 +57,16 @@ export class TextComponent extends ComponentParent {
   `
   //联想输入
   Lenovo: string = `
-  <fc-text fcLabel="联想输入测试" [fcAppid]="'SYSAPP'" [(ngModel)]="content" fcFieldCode='APPNAME' fcAppid='SYSAPP' name="fuzzy"></fc-text>
+  <fc-text fcLabel="联想输入" [fcAppid]="'SYSAPP'" [(ngModel)]="content" fcFieldCode='APPNAME' fcAppid='SYSAPP' name="fuzzy"></fc-text>
+  <fc-text fcLabel="关闭联想输入" [fcAutoComplete]="false" [fcAppid]="'SYSAPP'" [(ngModel)]="content" fcFieldCode='APPNAME' fcAppid='SYSAPP' name="fuzzy"></fc-text>
   `
   //后缀事件view
   addonafterview: string = `
   <fc-text [fcLabel]="'后缀事件'" [(ngModel)]="addonafer" [fcAddonAfter]="'万元'" fcMode="text" (fcEvent)="addonafterEvent($event)"> </fc-text>
+  `
+  //sysview
+  sysview : string = `
+  <fc-text fcLabel="元数据配置" [fcAppid]="'SYSAPP'" [(ngModel)]="content" fcFieldCode='APPNAME' fcAppid='SYSAPP' name="fuzzy"></fc-text>
   `
   //后缀事件code
   addonafterviewjs: string = `

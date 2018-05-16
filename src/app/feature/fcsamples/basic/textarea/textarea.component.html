@@ -1,7 +1,7 @@
 <!-- 大文本 fc-textarea -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="大文本" fccontent1 fcSubtitle="通过鼠标或键盘输入内容时，是最基本的文本框" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1  fcSubtitle="需要用户在文本框输入内容，可以进行文本编辑" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
@@ -51,7 +51,7 @@
                             </fc-adcode>
                         </fc-layoutgroup>
                         <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                            <div fccontent>
+                            <div fccontent class="textarea_bottom">
                                 <fc-textarea  [fcShowLabel]="false" [(ngModel)]="content">
                                 </fc-textarea>
                             </div>

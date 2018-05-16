@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ComponentParent } from '../../componentparent';
 import { ComponentService } from '../../services/component.service';
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'templatesignin',
   templateUrl: './templatesignin.component.html',

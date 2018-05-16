@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'modalwarn',
   templateUrl: './modalwarn.component.html',
-  styles: [``]
+  styles: [`
+  .all{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class ModalwarnComponent extends ComponentParent {
     //contentview

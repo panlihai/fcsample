@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'time',
   templateUrl: './time.component.html',
-  styles: [``]
+  styles: [`
+  .time_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class TimeComponent extends ComponentParent {
   // 基本view

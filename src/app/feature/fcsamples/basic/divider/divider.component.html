@@ -1,10 +1,10 @@
 <!-- 分隔 fc-divider -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="分隔" fcheader fcSubtitle="分隔组件" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="内容之间需要有分隔时" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="分隔" fccontent1 fcSubtitle="分隔组件" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="内容之间需要有分隔时" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>
@@ -18,20 +18,22 @@
                     fcview='<fc-divider></fc-divider>' [fccode]="basicjs">
                     </fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="text" fcTitle="带文字" fccontent2>
-                    <div fccontent>
-                        <fc-divider fcText="这是一个分割线"></fc-divider>
-                    </div>
-                    <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。" 
-                    fcview='<fc-divider fcText="这是一个分割线"></fc-divider>' [fccode]="basicjs">
-                    </fc-adcode>
-                </fc-layoutgroup>
-                <fc-layoutgroup id="tooltip" fcTitle="提示信息" fccontent1>
+                <fc-layoutgroup id="tooltip" fcTitle="提示信息" fccontent2>
                     <div fccontent style="margin-bottom: 10px;">
                         <fc-divider fcTooltip="提示信息"></fc-divider>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。" 
                     fcview='<fc-divider fcTooltip="提示信息"></fc-divider>' [fccode]="basicjs">
+                    </fc-adcode>
+                </fc-layoutgroup>
+            </fc-layoutcol>
+            <fc-layoutcol fcSpans="1" fccontent>
+                <fc-layoutgroup id="text" fcTitle="带文字" fccontent1>
+                    <div fccontent>
+                        <fc-divider fcText="这是一个分割线"></fc-divider>
+                    </div>
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。" 
+                    fcview='<fc-divider fcText="这是一个分割线"></fc-divider>' [fccode]="basicjs">
                     </fc-adcode>
                 </fc-layoutgroup>
             </fc-layoutcol>

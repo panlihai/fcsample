@@ -6,7 +6,15 @@ import { TimelineOptions } from 'fccomponent';
 @Component({
   selector: 'timeline',
   templateUrl: './timeline.component.html',
-  styles: [``]
+  styles: [`
+  :host ::ng-deep .ant-timeline{
+    margin-left:110px;
+  
+  .timelinelabel label{
+    position:relative;
+    left:140px;
+  }
+  `]
 })
 export class TimelineComponent extends ComponentParent {
   //基础js

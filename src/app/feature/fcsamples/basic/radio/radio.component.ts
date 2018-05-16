@@ -11,6 +11,9 @@ import { ComponentService } from '../../services/component.service';
     margin-right:24px;
     width:100%;
   }
+  .radio_bottom{
+    margin-bottom:10px;
+  }
   `]
 })
 export class RadioComponent extends ComponentParent {

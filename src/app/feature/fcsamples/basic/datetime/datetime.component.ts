@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'datetime',
   templateUrl: './datetime.component.html',
-  styles: [``]
+  styles: [`
+  .datatime_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class DatetimeComponent extends ComponentParent {
   // 基本view

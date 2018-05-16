@@ -1,17 +1,17 @@
 <!-- 时间轴 fc-timeline -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="时间轴" fcheader fcSubtitle="垂直展示的时间流信息。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="当有一系列信息需要从上至下按时间排列时；需要有一条时间轴进行视觉上的串联时；" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="时间轴" fccontent1 fcSubtitle="垂直展示的时间流信息。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当有一系列信息需要从上至下按时间排列时；需要有一条时间轴进行视觉上的串联时；" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>
             <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup id="basic" fcTitle="基本" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="timelinelabel">
                         <fc-timeline [fcOption]="timeline1"></fc-timeline>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。" 
@@ -29,7 +29,7 @@
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="color" fcTitle="圆圈颜色" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="timelinelabel">
                         <fc-timeline [fcOption]="timelineColor"></fc-timeline>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="文字居左显示" 
@@ -38,8 +38,7 @@
                     </fc-adcode>
                 </fc-layoutgroup>
             </fc-layoutcol>
-        </fc-layoutpanel>
-        
+        </fc-layoutpanel>        
         <!-- API -->
         <fc-layoutpanel fccontent>
                 <fc-title id="attributesAPI" fcLabel="属性" fcheader></fc-title>
@@ -68,8 +67,4 @@
         </div>
         </fc-layoutcol>
         <!-- 快速定位结束 -->
-    
-    
-    
-    
 </fc-layoutpanel>

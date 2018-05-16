@@ -1,7 +1,7 @@
 <!-- 模态框-警告 fc-modalinfo -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="模态框" fccontent1 fcSubtitle="模态框组件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="点击按钮弹出模态框警告弹窗" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -11,7 +11,7 @@
             <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup id="basic" fcTitle="基本" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="all">
                       <fc-button fcLabel="打开警告弹窗" fcType="primary" (click)="modalwarn.showModal()"></fc-button>
                       <fc-modalwarn #modalwarn fcTitle="这是一条警告信息" fcContent="一些附加信息一些附加信息一些附加信息"></fc-modalwarn>
                     </div>
@@ -20,7 +20,7 @@
                   [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="type" fcTitle="类型" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="all">
                         <fc-button fcLabel="打开警告弹窗" fcType="primary" (click)="modalwarn.showModal()"></fc-button>
                         <fc-modalwarn #modalwarn fcTitle="这是一条警告信息" fcContent="一些附加信息一些附加信息一些附加信息"></fc-modalwarn>
                     </div>
@@ -29,7 +29,7 @@
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="content" fcTitle="附加信息" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="all">
                       <fc-button fcLabel="打开警告弹窗" fcType="primary" (click)="modalwarn.showModal()"></fc-button>
                       <fc-modalwarn #modalwarn fcTitle="这是一条警告信息" fcContent="一些附加信息一些附加信息一些附加信息"></fc-modalwarn>
                     </div>
@@ -43,7 +43,7 @@
             <fc-title fcLabel="事件" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup id="event"  fcTitle="事件" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="all">
                       <fc-button fcLabel="打开警告弹窗" fcType="primary" (click)="modalwarn.showModal()"></fc-button>
                       <fc-modalwarn #modalwarn fcTitle="这是一条警告信息" fcContent="一些附加信息一些附加信息一些附加信息"></fc-modalwarn>
                     </div>

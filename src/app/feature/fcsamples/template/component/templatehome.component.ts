@@ -3,9 +3,9 @@ import { ComponentService } from '../../services/component.service';
 import { Component, OnInit, AfterContentInit, OnChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ParentComponent, TimelineOptions } from 'fccomponent';
+import { LayoutService } from '../../../../system/services/layout.service';
 import { eventNames } from 'cluster';
 import { FCEVENT } from 'fccomponent/fc';
-import { LayoutService } from '../../../../system/services/layout.service';
 @Component({
   selector: 'templatehome',
   templateUrl: './templatehome.component.html',
@@ -22,17 +22,26 @@ import { LayoutService } from '../../../../system/services/layout.service';
       height: 110px;
       padding: 20px 0px 0px 20px;
     }
-    :host ::ng-deep .first-icon>i{
+    .railway{
+      height:40px;
+      width:40px;
+      font-size:40px;
+      display:inline-block;
+      margin-right:20px;
+      width:5%;
+    }
+    :host ::ng-deep .railway .fc-icon-notice{
       font-size:40px;
     }
-    .tagselect{
-      position: absolute;
-      right: 10px;
-      top: 15px;
+    .detailcontent{
+      width:91%;
     }
     :host ::ng-deep .viewdetail a{
       font-size:14px;
-      width:100%;
+    }
+    :host ::ng-deep .ant-tag-text{
+      font-size:14px;
+      color: #666666;
     }
     .home-list{
       width:100%;
@@ -65,7 +74,108 @@ import { LayoutService } from '../../../../system/services/layout.service';
     }
     .contact_icon{
       z-index:999;
-    }     
+    }
+    .talk{
+      width: 230px;
+      height: 281px;
+      background: #f1f1f1;
+      z-index: 999;
+      position: absolute;
+      bottom: 40px;
+      right: 30px;
+    }
+    .talk_title{
+      width:230px;
+      height:50px;
+      line-height:50px;
+      background:#5c92ff;
+      position:relative;
+    }
+    .talk_title span{
+      color:#fff;
+    }
+    .first{
+      float:left;
+      padding-left:10px;
+      padding-right:20px;
+    }
+    .second{
+      float:left;
+    }
+    .three{
+      float:right;
+      margin-right:20px;
+      cursor:pointer;
+    }
+    .contain{
+      width:100%;
+      heihgt:200px;
+      position:relative;
+    }
+    .contain_top{
+      height:186px;
+      background:#ffffff;
+      position: relative;
+      top: -19px;
+    }
+    .time{
+      text-align: center;
+      margin: 12px 7px;
+      padding-top: 20px;
+    }
+    .link{
+      height:32px;
+      background:#f1f1f1;
+      width:193px;
+      line-height: 2.5em; 
+      text-align: center;
+      border-radius: 7px;
+      margin-left: 12px;
+      margin-bottom: 20px;
+    }
+    .message{
+      height:32px;
+      background:#5c92ff;
+      width: 193px;
+      line-height: 2.5em; 
+      text-align: center; 
+      border-radius: 7px;
+      position:absolute;
+      right:10px;
+    }
+    .name{
+      color:#333;
+      position:absolute;
+      right:5px; 
+      bottom: 24px;
+      right: 10px; 
+      color: #ccc;
+    }
+    .contain_bottom{   
+      width: 95%;
+      margin: 0 auto;
+      height: 33px; 
+      border-radius: 
+      5px;background:#fff;
+      position:relative;
+      top:-8px;
+    }
+    .c_bt_t{
+      padding:10px;
+      position: absolute; 
+      bottom: -9px;
+    }
+    .send{    
+      position: absolute;
+      top: 5px; 
+      right: 20px;
+      color: #5c92ff;
+    }
+    .c_bt_message{
+      position: absolute; 
+      left: 32px;
+      top: 5px;
+    }
    :host ::ng-deep .home-calendar .ant-fullcalendar-header{
       position: absolute;
       top: -54px;
@@ -111,13 +221,6 @@ import { LayoutService } from '../../../../system/services/layout.service';
       -webkit-transition: all 0.3s; 
       -o-transition: all 0.3s;
     }
-    .main_contain{
-      margin-top: -10px;
-    }
-    .contacticon{
-      position: absolute;
-      right: 0;
-    }
     .contacticon:hover{
       cursor: pointer;
     }
@@ -127,43 +230,30 @@ import { LayoutService } from '../../../../system/services/layout.service';
   :host ::ng-deep .fastcontent{
     padding-left:20px;
   }
-    :host ::ng-deep .fastcontenttext a{
-    color:#333333;
-    font-size:14px;
-    height:40px;
-    line-height:40px;
-    display:inline-block;
-    margin-right:20px;
-  }
-  :host ::ng-deep .add button{
-    width:60px;
-    height:28px;
-    color:#5c92ff;
-  }
-  :host ::ng-deep .fc-timeline-left .fc-timeline-label {
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-    width:89px;
-  }
-  .system-version{
+  :host ::ng-deep .ant-tag-blue {
+    border: none;
+    background-color: #EEF7FC;
     padding-left:10px;
-  }
-  .system-version>div{
-    width:100%;
-    height:300px;
-    padding-left:20px;
-  }
-  .add {
-    display:inline-block;
-  }
-  .home-list-inlineblock{
-    display:inline-block;
-  }
-  :host ::ng-deep .piechart>div{
-    padding-top:40px;
-  }
-  
+}
+  :host ::ng-deep .fastcontenttext a{
+  color:#333333;
+  font-size:14px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  margin-right:20px;
+}
+:host ::ng-deep .add button{
+  width:60px;
+  height:28px;
+  color:#5c92ff;
+}
+:host ::ng-deep .fc-timeline-left .fc-timeline-label {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:89px;
+}
     `
   ]
 })
@@ -309,5 +399,4 @@ export class TemplatehomeComponent {
 
     }
   }
-  
 }

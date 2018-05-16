@@ -43,6 +43,10 @@ export class ChosenComponent extends ComponentParent {
     clearview: string = `
     <fc-chosen [fcLabel]="'清除捕获事件'"  (fcEvent)="choseEvent($event)" [(ngModel)]="chosenValue" [fcOption]="chosenOptionsDisabled" (fcEvent)="choseEvent($event)"></fc-chosen>
     `
+    //sysview元数据绑定
+    sysview : string = `
+    <fc-chosen [fcLabel]="'元数据绑定'" fcAppid="SYSAPP" fcPlaceHolder="请选择" fcFieldCode='APPNAME' [(ngModel)]="content" fcValueCode='APPNAME' fcLabelCode='APPNAME' name="content"></fc-chosen>
+    `
    //基础js
    basicjs: string = `
    import { Component, OnInit } from '@angular/core';
@@ -52,6 +56,7 @@ export class ChosenComponent extends ComponentParent {
      styleUrl:'./chosen.component.css'
    })
    export class ChosenComponent{
+    content : string = '';
     chosenValue: string = 'a';
     chosenOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
     chosenOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];
@@ -79,6 +84,7 @@ export class ChosenComponent extends ComponentParent {
     }
   }
    `
+  content: string = ""
   chosenValue: string = 'a';
   chosenOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
   chosenOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];

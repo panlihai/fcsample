@@ -10,7 +10,15 @@ import { ComponentService } from '../../services/component.service';
 export class ProgresspercentComponent extends ComponentParent {
    //basicview
    basicview : string = `
-   <fc-progresspercent></fc-progresspercent>
+   <fc-progresspercent fcModel="75"></fc-progresspercent>
+   <fc-progresspercent fcModel="70"></fc-progresspercent>
+   <fc-progresspercent fcModel="100"></fc-progresspercent>
+   `
+   //sizeview
+   sizeview : string = `
+   <fc-progresspercent fcModel="75" fcStrokeWidth="80"></fc-progresspercent>
+   <fc-progresspercent fcModel="70" fcStrokeWidth="80"></fc-progresspercent>
+   <fc-progresspercent fcModel="100" fcStrokeWidth="80"></fc-progresspercent>
    `
    //basicjs
    basicjs : string = `

@@ -24,6 +24,7 @@ import { TemplatevalidateComponent } from './component/templatevalidate.componen
 import { TemplatetablistComponent } from './component/templatetablist.component';
 import { TemplatetreetablistComponent } from './component/templatetreetablist.component';
 import { TemplatefastpositionComponent } from './component/templatefastposition.component';
+
 @NgModule({
   imports: [
     FormsModule,

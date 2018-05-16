@@ -5,7 +5,16 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'upload',
   templateUrl: './upload.component.html',
-  styles: [``]
+  styles: [`
+  .upload_bottom{
+    margin-bottom:10px;
+  }
+  .iconlist{
+    margin-bottom:10px;
+    height:200px;
+    overflow:hidden;
+  }
+  `]
 })
 export class UploadComponent extends ComponentParent {
   //基本view

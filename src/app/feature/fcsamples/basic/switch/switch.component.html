@@ -1,7 +1,7 @@
 <!-- 开关 fc-switch -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
     <fc-title fcLabel="开关" fccontent1 fcSubtitle="开关选择器" fcHasline="false"></fc-title>
     <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="需要表示开关状态/两种状态之间的切换时；和 checkbox的区别是，切换 switch 会直接触发状态改变，而 checkbox 一般用于状态标记，需要和提交操作配合。" fcHasline="false"></fc-title>
     <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -53,7 +53,7 @@
                 [fccode]="basicjs"></fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                <div fccontent>
+                <div fccontent class="switch_bottom">
                     <fc-switch [fcShowLabel]="false" fcCheckValue="Y" fcOption='[{"label":"是","value":"Y"},{"label":"否","value":"N"}]'>
                     </fc-switch>
                 </div>

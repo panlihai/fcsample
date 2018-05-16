@@ -1,10 +1,10 @@
 <!-- 数值 fc-double -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="数值" fcheader fcSubtitle="通过鼠标或键盘，输入范围内的数值。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="当需要获取标准数值时。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="数值" fccontent1 fcSubtitle="通过鼠标或键盘，输入范围内的数值。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当需要获取标准数值时。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>           
@@ -79,7 +79,7 @@
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="double_bottom">
                         <fc-double [fcShowLabel]="false" [(ngModel)]="doubleValue"></fc-double>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="不占位时显示的效果"

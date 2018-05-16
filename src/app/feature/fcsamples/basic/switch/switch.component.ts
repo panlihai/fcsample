@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'switch',
   templateUrl: './switch.component.html',
-  styles: [``]
+  styles: [`
+  .switch_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class SwitchComponent extends ComponentParent {
    // 基本view

@@ -1,7 +1,7 @@
 <!-- 自定义下拉 fc-any -->
 <fc-layoutpanel  class="templatefastposition samples">
      <!-- 快速定位 -->
-        <fc-layoutcol fcSpans="9,1" fccontent>
+        <fc-layoutcol fcSpans="8.5,1.5" fccontent>
             <fc-title fcLabel="自定义下拉单选" fccontent1 fcSubtitle="点击输入框弹出列表" fcHasline="false"></fc-title>
             <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当页面上的操作命令过多时，用此组件可以收纳操作元素。点击触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。" fcHasline="false"></fc-title>
             <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -20,7 +20,20 @@
                                 [fccode]="basicjs">
                             </fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="size" fcTitle="大小" fccontent2>
+                        <fc-layoutgroup id="sys" fcTitle="元数据" fccontent2>    
+                            <div fccontent>
+                                <fc-any [fcLabel]="'元数据绑定'" fcAppid="SYSAPP"
+                                 fcPlaceHolder="请选择" fcFieldCode='APPNAME' 
+                                 [(ngModel)]="content" fcValueCode='APPNAME'
+                                fcLabelCode='APPNAME' name="content">
+                                </fc-any>
+                            </div>
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="元数据绑定自定义下拉"
+                                [fcview]="sysview"
+                                [fccode]="basicjs">
+                            </fc-adcode>
+                        </fc-layoutgroup>
+                        <fc-layoutgroup id="size" fcTitle="大小" fccontent1>
                             <div fccontent>
                                     <fc-any [fcLabel]="'默认'" [(ngModel)]="anyValue" fcSize="default" [fcOption]="anyOptions"></fc-any>
                                     <fc-any [fcLabel]="'大'" [(ngModel)]="anyValue" fcSize="large" [fcOption]="anyOptions"></fc-any>
@@ -31,7 +44,7 @@
                                     </fc-adcode>
                             </div>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="readonly" fcTitle="只读" fccontent1>
+                        <fc-layoutgroup id="readonly" fcTitle="只读" fccontent2>
                             <div fccontent>
                                 <fc-any [fcLabel]="'只读'" [(ngModel)]="anyValue" [fcOption]="anyOptionsReadonly" [fcReadonly]="true">
                                 </fc-any>
@@ -41,7 +54,7 @@
                                 </fc-adcode>
                             </div>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent2>
+                        <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent1>
                             <div fccontent>
                                 <fc-any [fcLabel]="'单独禁用'" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled">
                                 </fc-any>
@@ -50,7 +63,7 @@
                             [fcview]="singledisabledview"
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent1>
+                        <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent2>
                             <div fccontent>
                                 <fc-any [fcLabel]="'禁用'" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled" fcDisabled="true">
                                 </fc-any>
@@ -59,7 +72,7 @@
                             [fcview]="disabledview"
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent2>
+                        <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent1>
                             <div fccontent>
                                 <fc-any [fcLabel]="'带搜索'" [fcShowSearch]="true" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled">
                                 </fc-any>
@@ -68,7 +81,7 @@
                             [fcview]="searchview"
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="nocontent" fcTitle="未找到" fccontent1>
+                        <fc-layoutgroup id="nocontent" fcTitle="未找到" fccontent2>
                             <div fccontent>
                                 <fc-any [fcLabel]="'未找到'" fcNotFoundContent="当下拉列表为空时显示的内容" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled">
                                 </fc-any>
@@ -77,7 +90,7 @@
                             [fcview]="nocontentview"
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
+                        <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent1>
                             <div fccontent style="margin-bottom: 10px;">
                                 <fc-any [fcShowLabel]="false" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled">
                                 </fc-any>
@@ -123,6 +136,7 @@
                 <fc-fastposition  [fcLinks]="
                     [
                     {href:'basic','label':'基本'},
+                    {href:'sys','label':'元数据'},
                     {href:'size','label':'大小'},
                     {href:'readonly','label':'只读'},
                     {href:'singledisabled','label':'单独禁用'},

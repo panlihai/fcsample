@@ -1,7 +1,7 @@
 <!-- 标题 fc-title -->
 <fc-layoutpanel class="templatefastposition samples">
         <!-- 快速定位 -->
-        <fc-layoutcol fcSpans="9,1" fccontent>
+        <fc-layoutcol fcSpans="8.5,1.5" fccontent>
             <fc-title fcLabel="标题" fccontent1 fcSubtitle="一个标题组件" fcHasline="false"></fc-title>
             <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="需要提示一个区域或文章内容时的标题。" fcHasline="false"></fc-title>
             <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -44,38 +44,7 @@
                             <fc-adcode fcfooter fcTitle="描述" fcRemark="副标题显示的内容" fcview='<fc-title fcLabel="这是一个标题" fcHasLine="false" fcSubtitle="副标题内容显示"></fc-title>'
                                 [fccode]="subtitlejs"></fc-adcode>
                         </fc-layoutgroup>
-                        <fc-layoutgroup id="position" fcTitle="标题居中" fccontent2>
-                            <div fccontent>
-                                <fc-title fcLabel="债权清收登记" fcLayout="center" fcheader>
-                                    <div class="subtitle" fcsubtitle>
-                                        <div class="subtitle-item">
-                                        <label>单位:</label>
-                                        <span>上海</span>
-                                        </div>
-                                        <div class="subtitle-item">
-                                        <label>部门:</label>
-                                        <span>财务科</span>
-                                        </div>
-                                        <div class="subtitle-item">
-                                        <label>登记人:</label>
-                                        <span>王五</span>
-                                        </div>
-                                        <div class="subtitle-item">
-                                        <label>登记日期:</label>
-                                        <span>2017年12月25日</span>
-                                        </div>
-                                        <div class="subtitle-item">
-                                        <label>收款单状态:</label>
-                                        <fc-tag fcTitle="未提交" fcColor="blue"></fc-tag>
-                                        </div>
-                                    </div>
-                                </fc-title>
-                            </div>
-                            <fc-adcode fcfooter fcTitle="描述" fcRemark="表题居中显示。"
-                            [fcview]="positionview"
-                            [fccode]="basicjs"></fc-adcode>
-                        </fc-layoutgroup>
-                        <fc-layoutgroup id="width" fcTitle="宽度" fccontent1>
+                        <fc-layoutgroup id="width" fcTitle="宽度" fccontent2>
                             <div fccontent>
                                 <fc-title fcLabel="这是一个标题" fcWidth="70%" fcBorder="false" fcBorder="bottom"></fc-title>
                             </div>
@@ -83,6 +52,39 @@
                             fcview='<fc-title fcLabel="这是一个标题" fcWidth="70%" fcBorder="false" fcBorder="bottom"></fc-title>' 
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
+                    </fc-layoutcol>
+                    <fc-layoutcol fccontent fcSpans="1">
+                            <fc-layoutgroup id="position" fcTitle="标题居中" fccontent1>
+                                    <div fccontent>
+                                        <fc-title fcLabel="债权清收登记" fcLayout="center" fcheader>
+                                            <div class="subtitle" fcsubtitle>
+                                                <div class="subtitle-item">
+                                                <label>单位:</label>
+                                                <span>上海</span>
+                                                </div>
+                                                <div class="subtitle-item">
+                                                <label>部门:</label>
+                                                <span>财务科</span>
+                                                </div>
+                                                <div class="subtitle-item">
+                                                <label>登记人:</label>
+                                                <span>王五</span>
+                                                </div>
+                                                <div class="subtitle-item">
+                                                <label>登记日期:</label>
+                                                <span>2017年12月25日</span>
+                                                </div>
+                                                <div class="subtitle-item">
+                                                <label>收款单状态:</label>
+                                                <fc-tag fcTitle="未提交" fcColor="blue"></fc-tag>
+                                                </div>
+                                            </div>
+                                        </fc-title>
+                                    </div>
+                                    <fc-adcode fcfooter fcTitle="描述" fcRemark="表题居中显示。"
+                                    [fcview]="positionview"
+                                    [fccode]="basicjs"></fc-adcode>
+                                </fc-layoutgroup>
                     </fc-layoutcol>
                 </fc-layoutpanel>                  
                 <!-- API -->

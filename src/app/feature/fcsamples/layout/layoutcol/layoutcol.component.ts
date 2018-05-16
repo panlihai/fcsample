@@ -6,6 +6,9 @@ import { ComponentService } from '../../services/component.service';
   selector: 'layoutcol',
   templateUrl: './layoutcol.component.html',
   styles: [`
+  .col_bottom{
+    margin-bottom:10px;
+  }
   .first{
     height:200px;
     background-color:#E6F7FF;

@@ -1,10 +1,10 @@
 <!-- 树控件 fc-tree -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="树控件" fcheader fcSubtitle="树控件组件" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="点击按钮出现点击下拉树" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="树控件" fccontent1 fcSubtitle="树控件组件" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="点击按钮出现点击下拉树" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
             <fc-layoutpanel fccontent>
@@ -22,15 +22,51 @@
                     </fc-layoutcol>
             </fc-layoutpanel>
             <fc-layoutpanel fccontent>
-                    <fc-title id="treeejs" fcLabel="事件" fcheader fcHasLine="false" fcSize="small"></fc-title>
+                    <fc-title  fcLabel="事件" fcheader fcHasLine="false" fcSize="small"></fc-title>
                     <fc-layoutcol fccontent fcSpans="1,1">
-                        <fc-layoutgroup fcTitle="事件" fccontent1>
+                        <fc-layoutgroup id="initialized" fcTitle="初始化" fccontent1>
                             <div fccontent>
-                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" treeEvent($event);"></fc-tree>
+                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" initializedEvent($event);"></fc-tree>
                             </div>
-                            <fc-adcode fcfooter fcTitle="描述" fcRemark="基本的显示。" 
-                            fcview='treeeview'
-                            [fccode]="basicjs">
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="初始化事件" 
+                            [fcview]="initializedview"
+                            [fccode]="initializedjs">
+                            </fc-adcode>
+                        </fc-layoutgroup>
+                        <fc-layoutgroup id="select" fcTitle="选中事件" fccontent2>
+                            <div fccontent>
+                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" checkEvent($event);"></fc-tree>
+                            </div>
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="选中事件" 
+                            [fcview]="checkview"
+                            [fccode]="checkjs">
+                            </fc-adcode>
+                        </fc-layoutgroup>
+                        <fc-layoutgroup id="focus" fcTitle="获取焦点" fccontent1>
+                            <div fccontent>
+                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" focusEvent($event);"></fc-tree>
+                            </div>
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="获取焦点" 
+                            [fcview]="focusview"
+                            [fccode]="focusjs">
+                            </fc-adcode>
+                        </fc-layoutgroup>
+                        <fc-layoutgroup id="blur" fcTitle="失去焦点事件" fccontent2>
+                            <div fccontent>
+                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" blurEvent($event);"></fc-tree>
+                            </div>
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="失去焦点事件" 
+                            [fcview]="blurview"
+                            [fccode]="blurjs">
+                            </fc-adcode>
+                        </fc-layoutgroup>
+                        <fc-layoutgroup id="move" fcTitle="移走节点" fccontent1>
+                            <div fccontent>
+                                <fc-tree [(ngModel)]="treeSelectObj" [fcOption]="treeOptions" (fcEvent)=" movenodeEvent($event);"></fc-tree>
+                            </div>
+                            <fc-adcode fcfooter fcTitle="描述" fcRemark="移走节点事件" 
+                            [fcview]="movenodeview"
+                            [fccode]="movenodejs">
                             </fc-adcode>
                         </fc-layoutgroup>
                     </fc-layoutcol>
@@ -54,7 +90,11 @@
             <fc-fastposition [fcLinks]="
                 [
                 {href:'basic','label':'基本'},
-                {href:'treeejs','label':'树事件'},
+                {href:'initializedjs','label':'初始化'},
+                {href:'select','label':'选中'},
+                {href:'focus','label':'获取焦点'},
+                {href:'blur','label':'失去焦点'},
+                {href:'move','label':'移走'},
                 {href:'attributesAPI','label':'属性API'},
                 {href:'eventAPI','label':'事件API'}
                 ]">

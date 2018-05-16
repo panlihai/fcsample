@@ -31,6 +31,10 @@ export class AnyComponent extends ComponentParent {
    searchview: string  = `
    <fc-any [fcLabel]="'是否带搜索'" [fcShowSearch]="true" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled"></fc-any>
    `
+   //sysview元数据显示信息
+   sysview : string = `
+   <fc-any [fcLabel]="'元数据绑定'" fcAppid="SYSAPP" fcPlaceHolder="请选择" fcFieldCode='APPNAME' [(ngModel)]="content" fcValueCode='APPNAME' fcLabelCode='APPNAME' name="content"></fc-any>
+   `
    //未找到内容时
    nocontentview: string = `
    <fc-any [fcLabel]="'未找到'" fcNotFoundContent="当下拉列表为空时显示的内容" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled"></fc-any>
@@ -48,6 +52,7 @@ export class AnyComponent extends ComponentParent {
     styleUrl:'./any.component.css'
   })
   export class AnyComponent{
+  content : string = '';
   anyValue: any = { "label": "A", "value": "a", "disabled": false };
   anyOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
   anyOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];
@@ -75,6 +80,7 @@ export class AnyComponent extends ComponentParent {
       break;
     }
   `
+  content: string = ""
   anyValue: any = { "label": "A", "value": "a", "disabled": false };
   anyOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
   anyOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];

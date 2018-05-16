@@ -1,8 +1,8 @@
 <!-- 加载-百分比 fc-progresspercent -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="加载" fccontent1 fcSubtitle="加载组件" fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="百分比加载" fccontent1 fcSubtitle="百分比加载组件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="加载圆圈" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
@@ -12,11 +12,31 @@
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup fcTitle="基本" fccontent1>
                   <div fccontent>
-                    <fc-progresspercent></fc-progresspercent>
+                    <fc-progresspercent fcModel="75"></fc-progresspercent>
+                    <fc-progresspercent fcModel="70"></fc-progresspercent>
+                    <fc-progresspercent fcModel="100"></fc-progresspercent>
                   </div>
                   <fc-adcode fcfooter fcTitle="描述" fcRemark="基本的用法"
                   [fcview]="basicview"
                   [fccode]="basicjs"></fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="percen" fcTitle="百分比" fccontent2>
+                    <div fccontent>
+                        <fc-progresspercent fcModel="80"></fc-progresspercent>
+                    </div>
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="百分比加载"
+                    fcview='<fc-progresspercent fcModel="80"></fc-progresspercent>'
+                    [fccode]="basicjs"></fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="size" fcTitle="小一号" fccontent1>
+                        <div fccontent>
+                        <fc-progresspercent fcModel="75" fcStrokeWidth="80"></fc-progresspercent>
+                        <fc-progresspercent fcModel="70" fcStrokeWidth="80"></fc-progresspercent>
+                        <fc-progresspercent fcModel="100" fcStrokeWidth="80"></fc-progresspercent>
+                    </div>
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="百分比加载"
+                    [fcview]="sizeview"
+                    [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
               </fc-layoutcol>
         </fc-layoutpanel>
@@ -39,6 +59,8 @@
             <fc-fastposition [fcLinks]="
               [
               {href:'basic','label':'基本'},
+              {href:'percen','label':'百分比'},
+              {href:'size','label':'大小'},
               {href:'attributesAPI','label':'属性API'},
               {href:'eventAPI','label':'事件API'}
               ]">

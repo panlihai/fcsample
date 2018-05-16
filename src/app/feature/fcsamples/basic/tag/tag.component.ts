@@ -5,7 +5,14 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'tag',
   templateUrl: './tag.component.html',
-  styles: [``]
+  styles: [`
+  .tag_bottom{
+    margin-bottom:10px;
+  }
+  .tag_color{
+    padding:5px;
+  }
+  `]
 })
 export class TagComponent extends ComponentParent {
   //基础js
@@ -32,6 +39,17 @@ export class TagComponent extends ComponentParent {
   <fc-tag  [fcCheckable]="true">Tag2</fc-tag>
   <fc-tag  [fcCheckable]="true">Tag3</fc-tag>
   <fc-tag  [fcCheckable]="true">Tag4</fc-tag>
+  `
+  //colorview
+  colorview: string = `
+  <fc-tag  fcColor="pink" fcTitle="pink"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="red" fcTitle="red"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="orange" fcTitle="orange"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="green" fcTitle="green"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="cyan" fcTitle="cyan"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="blue" fcTitle="blue"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="orange" fcTitle="orange"  fcSize="large" fcClose="true"></fc-tag>
+  <fc-tag  fcColor="purple" fcTitle="purple"  fcSize="large" fcClose="true"></fc-tag>
   `
   //标签是否关闭
   closejs : string = `

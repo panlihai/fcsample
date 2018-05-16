@@ -1,7 +1,7 @@
 <!-- 导航栏 fc-navbar -->
 <fc-layoutpanel  class="templatenavbar">
    <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
     <fc-title fcLabel="导航栏" fccontent1 fcSubtitle="导航栏菜单" fcHasline="false"></fc-title>
     <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="顶部导航栏组件" fcHasline="false"></fc-title>
     <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -11,7 +11,7 @@
         <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
         <fc-layoutcol fccontent fcSpans="1">
             <fc-layoutgroup id="basic" fcTitle="基本" fccontent1>
-              <div fccontent class="all">
+              <div fccontent class="navbar_bottom">
                 <fc-navbar></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。"
@@ -20,7 +20,7 @@
               </fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="icon" fcTitle="图标" fccontent1>
-              <div fccontent  class="all">
+              <div fccontent  class="navbar_bottom" >
                   <fc-navbar fcIcon="icon iconfont fc-icon-relation logo-img"></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="导航图标更改"
@@ -29,7 +29,7 @@
               </fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="index" fcTitle="最顶层" fccontent1>
-              <div fccontent  class="all">
+              <div fccontent  class="navbar_bottom">
                   <fc-navbar  fcZindex="'100'"></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="设置导航层级为最顶层"
@@ -38,7 +38,7 @@
               </fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="title" fcTitle="标题" fccontent1>
-              <div fccontent  class="all">
+              <div fccontent  class="navbar_bottom">
                   <fc-navbar  fcTitle="标题"></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="导航标题更改"
@@ -47,7 +47,7 @@
               </fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="bgcolor" fcTitle="主题颜色" fccontent1>
-              <div fccontent  class="all">
+              <div fccontent  class="navbar_bottom">
                   <fc-navbar  fcColor="#ccc"></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="设置导航标题主题颜色"
@@ -56,7 +56,7 @@
              </fc-adcode>
             </fc-layoutgroup>
             <fc-layoutgroup id="log" fcTitle="Log更改" fccontent1>
-              <div fccontent  class="all">
+              <div fccontent  class="navbar_bottom">
                   <fc-navbar fcLogo="'assets/svg/logo.svg'"></fc-navbar>
               </div>
               <fc-adcode fcfooter fcTitle="描述" fcRemark="log更改"
@@ -70,7 +70,7 @@
         <fc-title fcLabel="事件" fcheader fcHasLine="false" fcSize="small"></fc-title>
         <fc-layoutcol fccontent fcSpans="1">
             <fc-layoutgroup id="navjs" fcTitle="导航事件" fccontent1>
-                <div fccontent class="all">
+                <div fccontent class="navbar_bottom">
                     <fc-navbar (fcEvent)="navbarEvent($event)" [fcStatus]="_navbarStatus"></fc-navbar>
                 </div>
                 <fc-adcode fcfooter fcTitle="描述" fcRemark="log更改"
