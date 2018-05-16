@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'badge',
   templateUrl: './badge.component.html',
-  styles: [``]
+  styles: [`
+  .badge_top{
+    margin-top:10px;
+  }
+  `]
 })
 export class BadgeComponent extends ComponentParent {
   //statusview

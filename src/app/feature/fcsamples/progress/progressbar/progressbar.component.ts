@@ -10,7 +10,10 @@ import { ComponentService } from '../../services/component.service';
 export class ProgressbarComponent extends ComponentParent {
   //basicview
   basicview : string = `
-  <fc-progresscircle></fc-progresscircle>
+  <fc-progressbar></fc-progressbar>
+  <fc-progressbar  fcModel="30" fcStrokeWidth="5"></fc-progressbar>
+  <fc-progressbar  fcModel="50" fcStrokeWidth="5"></fc-progressbar>
+  <fc-progressbar  fcModel="100" fcStrokeWidth="5"></fc-progressbar>
   `
   //basicjs
   basicjs : string = `

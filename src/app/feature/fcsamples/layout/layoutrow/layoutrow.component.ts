@@ -8,10 +8,16 @@ import { ComponentService } from '../../services/component.service';
   styles: [`
     .all{
       height:200px;
-      background: #a73d3d;
+      background: #e4be7c;
     }
     .text{
       color:#fff;
+    }
+    :host ::ng-deep .fc-layoutrowcell1{
+      background:#8adcac;
+    }
+    :host ::ng-deep .fc-layoutrowcell2{
+      background:#3a9d91;
     }
   `]
 })
@@ -29,11 +35,16 @@ export class LayoutrowComponent extends ComponentParent {
   basicstyle : string = `
   .all{
     height:200px;
-    background: #a73d3d;
-    margin-bottom:10px;
+    background: #e4be7c;
   }
   .text{
     color:#fff;
+  }
+  :host ::ng-deep .fc-layoutrowcell1{
+    background:#8adcac;
+  }
+  :host ::ng-deep .fc-layoutrowcell2{
+    background:#3a9d91;
   }
   `
    //基础js

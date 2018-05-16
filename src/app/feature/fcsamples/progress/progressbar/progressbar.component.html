@@ -1,8 +1,8 @@
 <!-- 加载-横条 fc-progressbar -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="加载" fccontent1 fcSubtitle="加载组件" fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="横条加载" fccontent1 fcSubtitle="横条加载组件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="加载横条" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
@@ -12,11 +12,22 @@
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup fcTitle="基本" fccontent1>
                   <div fccontent>
-                    <fc-progressbar fcModel="80" fcStrokeWidth="5"></fc-progressbar>
+                    <fc-progressbar></fc-progressbar>
+                    <fc-progressbar  fcModel="30" fcStrokeWidth="5"></fc-progressbar>
+                    <fc-progressbar  fcModel="50" fcStrokeWidth="5"></fc-progressbar>
+                    <fc-progressbar  fcModel="100" fcStrokeWidth="5"></fc-progressbar>
                   </div>
                   <fc-adcode fcfooter fcTitle="描述" fcRemark="基本的用法"
                   [fcview]="basicview"
                   [fccode]="basicjs"></fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="percen" fcTitle="百分比" fccontent2>
+                    <div fccontent>
+                        <fc-progressbar fcModel="80" fcStrokeWidth="5"></fc-progressbar>
+                    </div>
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="加载横条百分比"
+                    fcview='<fc-progressbar fcModel="80" fcStrokeWidth="5"></fc-progressbar>'
+                    [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
               </fc-layoutcol>
         </fc-layoutpanel>
@@ -39,6 +50,7 @@
             <fc-fastposition [fcLinks]="
               [
               {href:'basic','label':'基本'},
+              {href:'percen','label':'百分比'},
               {href:'attributesAPI','label':'属性API'},
               {href:'eventAPI','label':'事件API'}
               ]">

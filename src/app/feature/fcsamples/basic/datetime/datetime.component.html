@@ -1,7 +1,7 @@
 <!-- 日期时间 fc-datetime -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="日期时间" fccontent1 fcSubtitle="输入或选择日期时间的控件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当用户需要输入一个日期时间，可以点击标准输入框，弹出日期时间面板进行选择。" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -66,7 +66,7 @@
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="datatime_bottom">
                         <fc-datetime [fcShowLabel]="false" [(ngModel)]="now"></fc-datetime>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="不占位时显示的效果"

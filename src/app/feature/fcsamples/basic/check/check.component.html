@@ -1,7 +1,7 @@
 <!-- 多选 fc-check -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-        <fc-layoutcol fcSpans="9,1" fccontent>
+        <fc-layoutcol fcSpans="8.5,1.5" fccontent>
             <fc-title fcLabel="多选按钮" fccontent1 fcSubtitle="多选框。" fcHasline="false"></fc-title>
             <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="在一组可选项中进行多项选择时；单独使用可以表示两种状态之间的切换，和 switch 类似。区别在于切换 switch 会直接触发状态改变，而checkbox一般用于状态标记。" fcHasline="false"></fc-title>
             <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
@@ -57,7 +57,7 @@
                             [fccode]="basicjs"></fc-adcode>
                         </fc-layoutgroup>
                         <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                            <div fccontent>
+                            <div fccontent class="check_bottom">
                                 <fc-check  [fcShowLabel]="false"  [(ngModel)]="checkValue"  [fcOption]="checkOptions">
                                 </fc-check>
                             </div>

@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'check',
   templateUrl: './check.component.html',
-  styles: [``]
+  styles: [`
+  .check_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class CheckComponent extends ComponentParent {
   //复选框单独使用view

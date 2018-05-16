@@ -8,6 +8,9 @@ import { ComponentService } from '../../services/component.service';
   :host ::ng-deep .fc-header{
     text-align:left;
   }
+  .button_bottom{
+    margin-bottom:10px;
+  }
   `]
 })
 export class ButtonComponent extends ComponentParent {

@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'date',
   templateUrl: './date.component.html',
-  styles: [``]
+  styles: [`
+  .date_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class DateComponent extends ComponentParent {
   // 基本view

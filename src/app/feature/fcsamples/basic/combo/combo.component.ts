@@ -48,6 +48,10 @@ export class ComboComponent extends ComponentParent {
      clearview: string = `
      <fc-combo [fcLabel]="'清除捕获事件'"[(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled" (fcEvent)="comboEvent($event)"> </fc-combo>
      `
+     //sysview元数据绑定
+     sysview : string = `
+     <fc-combo [fcLabel]="'元数据绑定'" fcAppid="SYSAPP" fcPlaceHolder="请选择" fcFieldCode='APPNAME' [(ngModel)]="content" fcValueCode='APPNAME' fcLabelCode='APPNAME' name="content"></fc-combo>
+     `
   //基础js
   basicjs: string = `
   import { Component, OnInit } from '@angular/core';
@@ -57,6 +61,7 @@ export class ComboComponent extends ComponentParent {
     styleUrl:'./combo.component.css'
   })
   export class AnyComponent{
+    content : string = "";
     comboValue: string = 'a';
     comboOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
     comboOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];
@@ -84,6 +89,7 @@ export class ComboComponent extends ComponentParent {
     }
   }
    `
+   content : string = "";
   comboValue: string = 'a';
   comboOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
   comboOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];

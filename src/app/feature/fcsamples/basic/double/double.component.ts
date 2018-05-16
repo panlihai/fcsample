@@ -5,7 +5,11 @@ import { ComponentService } from '../../services/component.service';
 @Component({
   selector: 'double',
   templateUrl: './double.component.html',
-  styles: [``]
+  styles: [`
+  .double_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class DoubleComponent extends ComponentParent {
   // 基本view

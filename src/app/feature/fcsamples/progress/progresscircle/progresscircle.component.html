@@ -1,8 +1,8 @@
 <!-- 加载-圆圈 fc-progresscircle -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="加载" fccontent1 fcSubtitle="加载组件" fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="圆形加载" fccontent1 fcSubtitle="圆形加载组件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="加载圆圈" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
@@ -11,12 +11,22 @@
             <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup fcTitle="基本" fccontent1>
-                  <div fccontent>
+                  <div fccontent class="adcircle">
                     <fc-progresscircle></fc-progresscircle>
                   </div>
                   <fc-adcode fcfooter fcTitle="描述" fcRemark="基本的用法"
-                  [fcview]="basicview"
+                  fcview='<fc-progresscircle></fc-progresscircle>'
                   [fccode]="basicjs"></fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="size" fcTitle="大小" fccontent2>
+                        <div fccontent class="adcircle">
+                            <fc-progresscircle fcSize="large" class="circle_right"></fc-progresscircle>
+                            <fc-progresscircle fcSize="default" class="circle_right"></fc-progresscircle>
+                            <fc-progresscircle fcSize="small" class="circle_right"></fc-progresscircle>
+                        </div>
+                        <fc-adcode fcfooter fcTitle="描述" fcRemark="加载有大中小三种属性large、default、small"
+                        [fcview]="sizeview"
+                        [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
             </fc-layoutcol>
         </fc-layoutpanel>
@@ -39,6 +49,7 @@
             <fc-fastposition [fcLinks]="
               [
               {href:'basic','label':'基本'},
+              {href:'size','label':'大小'},
               {href:'attributesAPI','label':'属性API'},
               {href:'eventAPI','label':'事件API'}
               ]">

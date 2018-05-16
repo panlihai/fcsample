@@ -9,6 +9,9 @@ import { ComponentService } from '../../services/component.service';
   .triggerview{
     margin-right:24px;margin-top:24px;display: inline-block;
   }
+  .popover_bottom{
+    margin-bottom:10px;
+  }
   `]
 })
 export class PopoverComponent extends ComponentParent {

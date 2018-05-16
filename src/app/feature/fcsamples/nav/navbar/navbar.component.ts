@@ -8,10 +8,13 @@ import { eventNames } from 'cluster';
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styles: [`
+      :host ::ng-deep .fc-navbar{
+        height:46px;
+      }
       :host ::ng-deep .templatenavbar .fc-full{
         height:auto;
       }
-      .all{
+      .navbar_bottom{
         margin-bottom:10px;
       }
   `]

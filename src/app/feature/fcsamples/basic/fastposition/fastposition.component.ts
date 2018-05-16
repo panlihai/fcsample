@@ -7,19 +7,19 @@ import { ComponentService } from '../../services/component.service';
   templateUrl: './fastposition.component.html',
   styles: [`
     .blue{
-      background:blue;
+      background:#c92c85;
       height:200px;
     }
     .gre{
-      background:#ccc;
+      background:#926eb2;
       height:200px;
     }
     .black{
-      background:#000;
+      background:#e9c8f7;
       height:200px;
     }
     .pink{
-      background:pink;
+      background:#e1be7c;
       height:200px;
     }
   `]
@@ -63,19 +63,19 @@ export class FastpositionComponent extends ComponentParent {
 //基础css
 basicstyle : string = `
 .blue{
-  background:blue;
+  background:#c92c85;
   height:200px;
 }
 .gre{
-  background:#ccc;
+  background:#926eb2;
   height:200px;
 }
 .black{
-  background:#000;
+  background:#e9c8f7;
   height:200px;
 }
 .pink{
-  background:pink;
+  background:#e1be7c;
   height:200px;
 }
 `  

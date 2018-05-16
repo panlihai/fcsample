@@ -1,7 +1,7 @@
 <!-- 按钮 fc-button -->
 <fc-layoutpanel class="tabmain">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="选项卡" fccontent1 fcSubtitle="选项卡" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="点击按钮内容部分会根据按钮改变进行内容切换" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -25,7 +25,7 @@
               </fc-layoutgroup>
               <fc-layoutgroup id="type" fcTitle="类型" fccontent2>
                   <div fccontent >
-                      <fc-tabmain [fcTabs]="tabmain" [fcSelectedIndex]="tabIndex"[fcType]="card">
+                      <fc-tabmain [fcTabs]="tabmain" [fcSelectedIndex]="tabIndex"[fcType]="'card'">
                           <div fccontent1>fccontent1</div>
                           <div fccontent2>fccontent2</div>
                           <div fccontent3>fccontent3</div>

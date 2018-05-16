@@ -1,7 +1,7 @@
 <!-- 模态框-消息 fc-modalinfo -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="模态框" fccontent1 fcSubtitle="模态框组件" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="点击按钮弹出模态框消息弹窗" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -23,7 +23,6 @@
                     <div fccontent class="all">
                       <fc-button fcLabel="打开消息弹窗" fcType="primary" (click)="modalinfo.showModal()"></fc-button>
                       <fc-modalinfo #modalinfo fcTitle="这是一条通知信息" fcContent="一些附加信息一些附加信息一些附加信息一些附加信息一些附加信息一些附加信息"></fc-modalinfo>
-                      <div>按钮类型：fcType="primary"</div>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="按钮类型"
                     [fcview]="basicview"

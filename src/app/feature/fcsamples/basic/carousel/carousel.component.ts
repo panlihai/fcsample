@@ -5,7 +5,11 @@ import { CarouselOptions } from 'fccomponent/fcbasic/fccarousel.component';
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
-  styles: [``]
+  styles: [`
+  .carousel_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class CarouselComponent extends ComponentParent {
    //基础js
@@ -28,7 +32,7 @@ export class CarouselComponent extends ComponentParent {
     carouselData: any[] = [
       {
         label: "1",
-        src: "assets/img/fc1.jpg"
+        src: "assets/img/fc4.jpg"
       }, {
         label: "2",
         src: "assets/img/fc2.jpg"
@@ -77,7 +81,12 @@ export class CarouselComponent extends ComponentParent {
    }
    //垂直配置
    verticalOption: CarouselOptions = {
-    fcVertical: true
+    fcEffect:'scollx',
+    fcDots:true,
+    fcVertical:true,
+    fcAutoPlay:true,
+    fcAutoPlaySpeed:2000,
+    fcPauseOnHover:true
    }
    `
    //自动播放js
@@ -115,7 +124,12 @@ export class CarouselComponent extends ComponentParent {
    }
    //自动播放
    autoplayData: CarouselOptions = {
-     fcAutoPlay:false
+    fcEffect:'scollx',
+    fcDots:true,
+    fcVertical:true,
+    fcAutoPlay:false,
+    fcAutoPlaySpeed:2000,
+    fcPauseOnHover:true
    }
    `
      //hoverjs
@@ -153,7 +167,12 @@ export class CarouselComponent extends ComponentParent {
      }
      //鼠标悬停暂停
      pauseonhoverData : CarouselOptions = {
-       fcPauseOnHover: true
+       fcEffect:'scollx',
+       fcDots:true,
+       fcVertical:true,
+       fcAutoPlay:false,
+       fcAutoPlaySpeed:2000,
+       fcPauseOnHover:false
      }
      `
       //speedjs
@@ -241,7 +260,6 @@ export class CarouselComponent extends ComponentParent {
     fcAutoPlaySpeed:2000,
     fcPauseOnHover:true
   }
-  
   //轮播图渲染
   carouselData: any[] = [
     {
@@ -260,11 +278,21 @@ export class CarouselComponent extends ComponentParent {
   ]
   //垂直配置
   verticalOption: CarouselOptions = {
-    fcVertical: true
+    fcEffect:'scollx',
+    fcDots:true,
+    fcVertical:true,
+    fcAutoPlay:true,
+    fcAutoPlaySpeed:2000,
+    fcPauseOnHover:true
   }
   //自动播放
-  autoplayData: CarouselOptions = {
-    fcAutoPlay:false
+  autoplayOption: CarouselOptions = {
+    fcEffect:'scollx',
+    fcDots:true,
+    fcVertical:true,
+    fcAutoPlay:false,
+    fcAutoPlaySpeed:2000,
+    fcPauseOnHover:true
   }
   //播放速度
   autoplayspeedData: CarouselOptions = {
@@ -276,7 +304,12 @@ export class CarouselComponent extends ComponentParent {
   }
   //鼠标悬停暂停
   pauseonhoverData : CarouselOptions = {
-    fcPauseOnHover: true
+    fcEffect:'scollx',
+    fcDots:true,
+    fcVertical:true,
+    fcAutoPlay:false,
+    fcAutoPlaySpeed:2000,
+    fcPauseOnHover:false
   }
   constructor(public mainService: ComponentService) {
     super('FCCAROUSEL', mainService);

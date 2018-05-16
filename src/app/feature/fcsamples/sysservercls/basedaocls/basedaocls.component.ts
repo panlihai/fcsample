@@ -10,10 +10,6 @@ import { ComponentService } from '../../services/component.service';
   `]
 })
 export class BasedaoclsComponent extends ComponentParent {
-    //代码
-    code:string=`
-  
-    `;
   constructor(public mainService: ComponentService) {
     super('', mainService);
   }

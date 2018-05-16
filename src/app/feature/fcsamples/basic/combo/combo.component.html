@@ -1,7 +1,7 @@
 <!-- 下拉单选 fc-comob -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
     <fc-title fcLabel="下拉单选" fcheader fcSubtitle="向下弹出的列表" fcHasline="false"></fc-title>
     <fc-title fcLabel="何时使用" fcheader fcSubtitle="当页面上的操作命令过多时，用此组件可以收纳操作元素。点击触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。" fcHasline="false"></fc-title>
     <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
@@ -20,7 +20,20 @@
                     [fccode]="basicjs">
                 </fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="size" fcTitle="大小" fccontent2>
+                <fc-layoutgroup id="sys" fcTitle="元数据" fccontent2>
+                    <div fccontent>
+                        <fc-combo [fcLabel]="'元数据绑定'" fcAppid="SYSAPP"
+                        fcPlaceHolder="请选择" fcFieldCode='APPNAME' 
+                        [(ngModel)]="content" fcValueCode='APPNAME'
+                       fcLabelCode='APPNAME' name="content">
+                        </fc-combo>
+                    </div> 
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="元数据绑定下拉单选"
+                    [fcview]="sysview"
+                    [fccode]="basicjs">
+                </fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="size" fcTitle="大小" fccontent1>
                     <div fccontent>
                             <fc-combo [(ngModel)]="comboValue"  fcSize="default" [fcOption]="comboOptions"></fc-combo>
                             <fc-combo [(ngModel)]="comboValue"  fcSize="large" [fcOption]="comboOptions"></fc-combo>
@@ -31,7 +44,7 @@
                     [fccode]="basicjs">
                     </fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="readonly" fcTitle="只读" fccontent1>
+                <fc-layoutgroup id="readonly" fcTitle="只读" fccontent2>
                     <div fccontent>
                         <fc-combo [fcLabel]="'只读'" [(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled" [fcReadonly]="true">
                         </fc-combo>
@@ -41,7 +54,7 @@
                     [fccode]="basicjs">
                     </fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent2>
+                <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent1>
                     <div fccontent>
                         <fc-combo [fcLabel]="'单独禁用'" [(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled">
                         </fc-combo>
@@ -50,7 +63,7 @@
                     [fcview]="singledisabledview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent1>
+                <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent2>
                     <div fccontent>
                         <fc-combo [fcLabel]="'禁用'" [(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled" fcDisabled="true">
                         </fc-combo>
@@ -59,7 +72,7 @@
                     [fcview]="disabledview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent2>
+                <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent1>
                     <div fccontent>
                         <fc-combo [fcLabel]="'带搜索'" fcShowSearch="true" [(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled">
                         </fc-combo>
@@ -68,7 +81,7 @@
                     [fcview]="searchview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="nocontent" fcTitle="未找到内容时" fccontent1>
+                <fc-layoutgroup id="nocontent" fcTitle="未找到内容时" fccontent2>
                     <div fccontent>
                         <fc-combo [fcLabel]="'未找到时'" fcNotFoundContent="未找到" [(ngModel)]="comboValue" [fcOption]="comboOptionsDisabled">
                         </fc-combo>
@@ -77,7 +90,7 @@
                     [fcview]="nocontentview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="haveto" fcTitle="必填项" fccontent2>
+                <fc-layoutgroup id="haveto" fcTitle="必填项" fccontent1>
                     <div fccontent>
                         <fc-combo [fcLabel]="'必填'"  [fcRequired]="true" [(ngModel)]="comboValue" [fcOption]="comboOptions">
                         </fc-combo>
@@ -86,7 +99,7 @@
                     [fcview]="havetoview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="dictionary" fcTitle="参照字典" fccontent1>
+                <fc-layoutgroup id="dictionary" fcTitle="参照字典" fccontent2>
                     <div fccontent>
                         <fc-combo [fcLabel]="'参照字典'" fcAppid="SYSAPP" fccontent fcFieldCode="APPID" fcLabelCode="APPNAME" fcValueCode="APPID"></fc-combo>
                     </div>
@@ -94,7 +107,7 @@
                     [fcview]="dictionaryview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-                <fc-layoutgroup id="noshowlabel" fcTitle="不否占位" fccontent2>
+                <fc-layoutgroup id="noshowlabel" fcTitle="不否占位" fccontent1>
                     <div fccontent style="margin-bottom: 10px;">
                         <fc-combo [fcShowLabel]="false"  [(ngModel)]="comboValue" [fcOption]="comboOptions">
                         </fc-combo>
@@ -139,6 +152,7 @@
             <fc-fastposition  [fcLinks]="
                 [
                 {href:'basic','label':'基本'},
+                {href:'sys','label':'元数据'},
                 {href:'size','label':'大小'},
                 {href:'readonly','label':'只读'},
                 {href:'singledisabled','label':'单独禁用'},

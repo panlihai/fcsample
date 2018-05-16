@@ -1,7 +1,7 @@
 <!-- 日期 fc-date -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="自定义下拉单选" fccontent1 fcSubtitle="点击输入框弹出列表" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当页面上的操作命令过多时，用此组件可以收纳操作元素。点击触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -78,7 +78,7 @@
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="date_bottom">
                         <fc-date [fcShowLabel]="false" [(ngModel)]="now"></fc-date>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="不占位时显示的效果"

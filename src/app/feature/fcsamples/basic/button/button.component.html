@@ -4,7 +4,7 @@
     <fc-title class="fc-header" fcLabel="何时使用" fcheader fcSubtitle="标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。" fcHasline="false"></fc-title>
     <fc-title class="fc-header" fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>
@@ -31,7 +31,7 @@
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="type" fcTitle="按钮类型" fccontent1>
-                    <div fccontent>
+                    <div fccontent  class="button_bottom">
                         <fc-button fcLabel="primary" fcType="primary"></fc-button>
                         <fc-button fcLabel="default" fcType="default"></fc-button>
                         <fc-button fcLabel="dashed" fcType="dashed"></fc-button>
@@ -57,9 +57,8 @@
                     [fcview]="iconview"
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
-               
                 <fc-layoutgroup id="shape" fcTitle="按钮形状" fccontent2>
-                    <div fccontent > 
+                    <div fccontent> 
                       <fc-button [fcIcon]="'fc-icon-method'" fcShape="circle"></fc-button>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="圆形按钮形状"
@@ -67,7 +66,7 @@
                     [fccode]="basicjs"></fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="ghost" fcTitle="幽灵按钮" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="button_bottom">
                         <div style="background-color:rgb(190, 200, 200);padding: 26px 16px 16px;">
                             <fc-button fcLabel="幽灵图标" fcType="primary" fcOpacity="true"></fc-button>
                             <fc-button fcLabel="幽灵图标" fcType="dashed" fcOpacity="true"></fc-button>

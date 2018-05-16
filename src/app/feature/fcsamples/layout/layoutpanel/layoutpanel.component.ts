@@ -9,15 +9,22 @@ import { ComponentService } from '../../services/component.service';
   .header{
     height:40px;
     line-height:40px;
-    background-color:#ccc;
+    background-color:#98e5b7;
+    text-align:center;
+    color:#fff;
+    font-size:22px;
   }
   .content{
     height:400px;
-    background-color:#8f9ba2;
+    background-color:#93dad6;
+    text-align:center;
+    color:#fff;
   }
   .footer{
     height:80px;
-    background-color:#855d5d;
+    background-color:#4cbd92;
+    text-align:center;
+    color:#fff;
   }
   `]
 })
@@ -41,15 +48,24 @@ export class LayoutpanelComponent extends ComponentParent {
   .header{
     height:40px;
     line-height:40px;
-    background-color:#ccc;
+    background-color:#98e5b7;
+    text-align:center;
+    color:#fff;
+    font-size:18px;
   }
   .content{
     height:400px;
-    background-color:#8f9ba2;
+    background-color:#93dad6;
+    text-align:center;
+    color:#fff;
+    font-size:18px;
   }
   .footer{
     height:80px;
-    background-color:#855d5d;
+    background-color:#4cbd92;
+    text-align:center;
+    color:#fff;
+    font-size:18px;
   }
   `
   //基础js

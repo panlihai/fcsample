@@ -6,7 +6,11 @@ import { FCEVENT } from 'fccomponent/fc';
 @Component({
   selector: 'many',
   templateUrl: './many.component.html',
-  styles: [``]
+  styles: [`
+  .many_bottom{
+    margin-bottom:10px;
+  }
+  `]
 })
 export class ManyComponent extends ComponentParent {
   //大小
@@ -41,7 +45,10 @@ export class ManyComponent extends ComponentParent {
   clearview: string = `
   <fc-any [fcLabel]="'清除捕获事件'" [(ngModel)]="anyValue" [fcOption]="anyOptionsDisabled" (fcEvent)="anyEvent($event)"></fc-any> 
   `
-
+ //元数据绑定sysview
+ sysview : string = `
+ <fc-many [fcLabel]="'元数据绑定'" fcAppid="SYSAPP" fcPlaceHolder="请选择" fcFieldCode='APPNAME' [(ngModel)]="content" fcValueCode='APPNAME' fcLabelCode='APPNAME' name="content"></fc-many>
+ `
 
 
 
@@ -54,6 +61,7 @@ export class ManyComponent extends ComponentParent {
     styleUrl:'./many.component.css'
   })
   export class ManyComponent{
+    content : string = '';
     manyValue: any[] = [{ "label": "A", "value": "a", "disabled": false }];
     manyOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
     manyOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];
@@ -82,6 +90,7 @@ export class ManyComponent extends ComponentParent {
     }
   }
   `
+  content : string = '';
   manyValue: any[] = [{ "label": "A", "value": "a", "disabled": false }];
   manyOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
   manyOptionsDisabled: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c', disabled: true }];

@@ -1,7 +1,7 @@
 <!-- 标签 fc-tag -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-<fc-layoutcol fcSpans="9,1" fccontent>
+<fc-layoutcol fcSpans="8.5,1.5" fccontent>
     <fc-title fcLabel="标签" fccontent1 fcSubtitle="进行标记和分类的小标签" fcHasline="false"></fc-title>
     <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="用于标记事物的属性和维度。" fcHasline="false"></fc-title>
     <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
@@ -11,7 +11,7 @@
             <fc-title fcLabel="属性" fcheader fcHasLine="false" fcSize="small"></fc-title>
             <fc-layoutcol fccontent fcSpans="1,1">
                 <fc-layoutgroup id="basic" fcTitle="基本" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="tag_bottom">
                         <fc-tag fcTitle="管理员" fcColor="blue" fcIcon="fc-line"></fc-tag>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="最基本的用法。"
@@ -20,20 +20,20 @@
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="icon" fcTitle="加图标" fccontent2>
-                    <div fccontent>
-                        <fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large"></fc-tag>
+                    <div fccontent class="tag_bottom">
+                        <fc-tag fcTitle="默认" fcColor="cyan" fcIcon="fc-icon-icaccrual"></fc-tag>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="标签加图标"
-                    fcview='<fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large"></fc-tag>'
+                    fcview=' <fc-tag fcTitle="默认" fcColor="cyan" fcIcon="fc-icon-icaccrual"></fc-tag>'
                     [fccode]="basicjs">
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="close" fcTitle="可关闭" fccontent1>
-                    <div fccontent>
-                        <fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large" fcClose="true"></fc-tag>
-                        <fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large" fcClose="true"></fc-tag>
-                        <fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large" fcClose="true"></fc-tag>
-                        <fc-tag  fcColor="blue" fcIcon="fc-icon-method" fcSize="large" fcClose="true"></fc-tag>
+                    <div fccontent class="tag_bottom">
+                        <fc-tag  fcColor="blue" fcTitle="默认" fcIcon="fc-icon-icaccrual" fcSize="large" fcClose="true"></fc-tag>
+                        <fc-tag  fcColor="blue" fcTitle="默认" fcIcon="fc-icon-icaccrual" fcSize="large" fcClose="true"></fc-tag>
+                        <fc-tag  fcColor="blue" fcTitle="默认" fcIcon="fc-icon-icaccrual" fcSize="large" fcClose="true"></fc-tag>
+                        <fc-tag  fcColor="blue" fcTitle="默认" fcIcon="fc-icon-icaccrual" fcSize="large" fcClose="true"></fc-tag>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="标签可关闭"
                     [fcview]='closeview'
@@ -41,7 +41,7 @@
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="check" fcTitle="可选择" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="tag_bottom">
                         <fc-tag  [fcCheckable]="true">Tag1</fc-tag>
                         <fc-tag  [fcCheckable]="true">Tag2</fc-tag>
                         <fc-tag  [fcCheckable]="true">Tag3</fc-tag>
@@ -49,6 +49,22 @@
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="标签可关闭"
                     [fcview]='checkview'
+                    [fccode]="checkjs">
+                    </fc-adcode>
+                </fc-layoutgroup>
+                <fc-layoutgroup id="color" fcTitle="颜色" fccontent1>
+                    <div fccontent class="tag_bottom">
+                        <fc-tag  fcColor="pink" fcTitle="pink"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="red" fcTitle="red"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="orange" fcTitle="orange"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="green" fcTitle="green"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="cyan" fcTitle="cyan"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="blue" fcTitle="blue"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="orange" fcTitle="orange"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                        <fc-tag  fcColor="purple" fcTitle="purple"  fcSize="large" fcClose="true" class="tag_color"></fc-tag>
+                    </div>
+                    <fc-adcode fcfooter fcTitle="描述" fcRemark="标签颜色"
+                    [fcview]='colorview'
                     [fccode]="checkjs">
                     </fc-adcode>
                 </fc-layoutgroup>
@@ -76,6 +92,7 @@
             {href:'icon','label':'加图标'},
             {href:'close','label':'可关闭'},
             {href:'check','label':'可选择'},
+            {href:'color','label':'颜色'},
             {href:'attributesAPI','label':'属性API'},
             {href:'eventAPI','label':'事件API'}
             ]">

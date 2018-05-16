@@ -1,7 +1,7 @@
 <!-- 下拉多选 fc-many -->
 <fc-layoutpanel>
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
         <fc-title fcLabel="自定义下拉多选" fcheader fcSubtitle="点击输入框弹出列表" fcHasline="false"></fc-title>
         <fc-title fcLabel="何时使用" fcheader fcSubtitle="当页面上的操作命令过多时，用此组件可以收纳操作元素。点击触点，会出现一个下拉菜单。可在列表中进行多次选择，并执行相应的命令。" fcHasline="false"></fc-title>
         <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
@@ -19,7 +19,19 @@
                             [fccode]="basicjs">
                         </fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="size" fcTitle="大小" fccontent2>
+                    <fc-layoutgroup id="sys" fcTitle="元数据" fccontent2>
+                        <div fccontent>
+                            <fc-many [fcLabel]="'元数据绑定'" fcAppid="SYSAPP"
+                            fcPlaceHolder="请选择" fcFieldCode='APPNAME' 
+                            [(ngModel)]="content" fcValueCode='APPNAME'
+                           fcLabelCode='APPNAME' name="content"></fc-many>
+                        </div>
+                        <fc-adcode fcfooter fcTitle="描述" fcRemark="元数据绑定多选下拉菜单"
+                            [fcview]="sysview"
+                            [fccode]="basicjs">
+                        </fc-adcode>
+                    </fc-layoutgroup>
+                    <fc-layoutgroup id="size" fcTitle="大小" fccontent1>
                         <div fccontent>
                             <fc-many [fcLabel]="'默认'" [(ngModel)]="manyValue"  fcSize="default" [fcOption]="manyOptions"></fc-many>
                             <fc-many [fcLabel]="'大'" [(ngModel)]="manyValue"  fcSize="large" [fcOption]="manyOptions"></fc-many>
@@ -30,7 +42,7 @@
                         [fccode]="basicjs">
                         </fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="readonly" fcTitle="只读" fccontent1>
+                    <fc-layoutgroup id="readonly" fcTitle="只读" fccontent2>
                         <div fccontent>
                             <fc-many [fcLabel]="'只读'" [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled" [fcReadonly]="true"></fc-many>
                         </div>
@@ -39,7 +51,7 @@
                         [fccode]="basicjs">
                         </fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent2>
+                    <fc-layoutgroup id="singledisabled" fcTitle="单独禁用" fccontent1>
                         <div fccontent>
                             <fc-many [fcLabel]="'单独禁用'" [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled"></fc-many>
                         </div>
@@ -47,7 +59,7 @@
                         [fcview]="singledisabledview"
                         [fccode]="basicjs"></fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent1>
+                    <fc-layoutgroup id="disabled" fcTitle="禁用" fccontent2>
                         <div fccontent>
                             <fc-many [fcLabel]="'禁用'" fcDisabled="true" [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled" ></fc-many>
                         </div>
@@ -55,7 +67,7 @@
                         [fcview]="disabledview"
                         [fccode]="basicjs"></fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent2>
+                    <fc-layoutgroup id="searchview" fcTitle="带搜索" fccontent1>
                         <div fccontent>
                             <fc-many [fcLabel]="'带搜索'" fcShowSearch="true" [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled"></fc-many>
                         </div>
@@ -63,7 +75,7 @@
                             [fcview]="searchview"
                             [fccode]="basicjs"></fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="nocontent" fcTitle="未找到" fccontent1>
+                    <fc-layoutgroup id="nocontent" fcTitle="未找到" fccontent2>
                         <div fccontent>
                             <fc-many [fcLabel]="'未找到时'" [(ngModel)]="manyValue" fcNotFoundContent="当下拉列表为空时显示的内容"  [fcOption]="manynullOptions" fcNotFoundContent="没有数据"></fc-many>
                         </div>
@@ -71,8 +83,8 @@
                         [fcview]="nocontentview"
                         [fccode]="basicjs"></fc-adcode>
                     </fc-layoutgroup>
-                    <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                        <div fccontent>
+                    <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent1>
+                        <div fccontent class="many_bottom">
                             <fc-many  [fcShowLabel]="false"[(ngModel)]="manyValue"  [fcOption]="manyOptions">
                             </fc-many>
                         </div>
@@ -115,6 +127,7 @@
                 <fc-fastposition  [fcLinks]="
                     [
                     {href:'basic','label':'基本'},
+                    {href:'sys','label':'元数据'},
                     {href:'size','label':'大小'},
                     {href:'readonly','label':'只读'},
                     {href:'singledisabled','label':'单独禁用'},

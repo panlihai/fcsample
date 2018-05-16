@@ -1,7 +1,7 @@
 <!-- 单选 fc-radio -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-        <fc-layoutcol fcSpans="9,1" fccontent>
+        <fc-layoutcol fcSpans="8.5,1.5" fccontent>
             <fc-title fcLabel="单选按钮" fccontent1 fcSubtitle="按钮用于开始一个即时操作" fcHasline="false"></fc-title>
             <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。" fcHasline="false"></fc-title>
             <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
@@ -64,7 +64,7 @@
                 </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent1>
-                    <div fccontent>
+                    <div fccontent class="radio_bottom">
                         <fc-radio [fcShowLabel]="false" [(ngModel)]="radioValue" [fcOption]="radioOptions">
                         </fc-radio>
                     </div>

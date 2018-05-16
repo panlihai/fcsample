@@ -1,10 +1,10 @@
 <!-- 整数 fc-long -->
 <fc-layoutpanel class="templatefastposition samples">
     <!-- 快速定位 -->
-    <fc-layoutcol fcSpans="9,1" fccontent>
-        <fc-title fcLabel="整数" fcheader fcSubtitle="通过鼠标或键盘，输入范围内的数值。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="何时使用" fcheader fcSubtitle="当需要获取标准数值时。" fcHasline="false"></fc-title>
-        <fc-title fcLabel="代码演示" fcheader fcHasline="false"></fc-title>
+    <fc-layoutcol fcSpans="8.5,1.5" fccontent>
+        <fc-title fcLabel="整数" fccontent1 fcSubtitle="通过鼠标或键盘，输入范围内的数值。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="何时使用" fccontent1 fcSubtitle="当需要获取标准数值时。" fcHasline="false"></fc-title>
+        <fc-title fcLabel="代码演示" fccontent1 fcHasline="false"></fc-title>
         <fc-layoutpanel fccontent1>
         <!-- 组件内容开始 -->
         <fc-layoutpanel fccontent>
@@ -75,7 +75,7 @@
                     </fc-adcode>
                 </fc-layoutgroup>
                 <fc-layoutgroup id="noshowlabel" fcTitle="不占位" fccontent2>
-                    <div fccontent>
+                    <div fccontent class="long_bottom">
                         <fc-long [fcShowLabel]="false" [(ngModel)]="longValue"></fc-long>
                     </div>
                     <fc-adcode fcfooter fcTitle="描述" fcRemark="不占位时显示的效果"

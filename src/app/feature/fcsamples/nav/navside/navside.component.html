@@ -3,9 +3,12 @@
   <fc-title fcLabel="侧边栏" fcheader></fc-title>
   <fc-layoutcol fccontent fcSpans="1,1">
     <fc-layoutgroup fcTitle="基本" fccontent1>
-      <div fccontent>
-        正在开发中
+      <div fccontent style="height:200px;">
+        <fc-navside [fcOption]="navasideData"></fc-navside>
       </div>
+      <fc-adcode fcfooter fcTitle="描述" fcRemark="基本的用法。"
+      [fcview]="basicview"
+      [fccode]="basicjs"></fc-adcode>
     </fc-layoutgroup>
   </fc-layoutcol>
 </fc-layoutpanel>
