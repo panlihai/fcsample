@@ -13,9 +13,10 @@ import { FCEVENT } from 'fccomponent/fc';
   `]
 })
 export class ListdataComponent extends ComponentParent {
+  listDataCustomCondition:'';
   //基础basicview
   basicview : string  = `
-  <fc-listdata [fcAppid]="appId" [fcOption]="fcListdataOptions"[fcCondition]="listDataCustomCondition"></fc-listdata>
+  <fc-listdata [fcAppid]="appId" [fcOption]="fcListdataOptions" [fcCondition]="listDataCustomCondition"></fc-listdata>
   `
    //启用查询
    searchjs : string = `

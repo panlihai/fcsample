@@ -4,7 +4,7 @@ import { ComponentService } from '../../services/component.service';
 
 @Component({
   selector: 'qa',
-  templateUrl: './aq.component.html',
+  templateUrl: './qa.component.html',
   styles: [``]
 })
 export class QaComponent extends ComponentParent {

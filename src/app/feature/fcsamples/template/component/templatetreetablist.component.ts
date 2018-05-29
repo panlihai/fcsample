@@ -10,6 +10,11 @@ import { TimelineOptions, TreeOptions } from 'fccomponent';
   `]
 })
 export class TemplatetreetablistComponent extends ComponentParent {
+  listDataCustomCondition: '';
+  //自定义下拉单选
+  comboValue: any = { "label": "A", "value": "a", "disabled": false };
+  comboOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
+
   //列表分页
   fcListdataOptions = {
     //皮肤默认为bootstrap风格
@@ -45,8 +50,8 @@ export class TemplatetreetablistComponent extends ComponentParent {
     //是否自动保存
     fcAutoSave: false
   };
-   //选项卡
-   tabmain = [
+  //选项卡
+  tabmain = [
     { name: '版本列表', icon: '', disabled: false },
     { name: '版本详细', icon: '', disabled: false },
   ]
@@ -67,32 +72,32 @@ export class TemplatetreetablistComponent extends ComponentParent {
   //整数
   longValue: number = 5;
   treeSelectObj: any = {};
- treeOptions: TreeOptions = {
-   //元数据id
-   fcAppid: "SYSMENU",//元数据id
-   //树结构节点显示内容
-   fcLabel: ':{MENUNAME}::{MENUID}',//支持:{参数名称}
-   // 关联父节点字段名称
-   fcParentCode: 'PARENT',
-   // 当前节点字段名称
-   fcChildCode: 'MENUID',
-   // 叶子节点字段名称
-   fcLeafCode: 'HASCHILD',
-   // 根节点条件
-   fcTopWhere: "PARENT is null or PARENT=''",
-   // 展开条件
-   fcExpWhere: "PARENT=':{MENUID}'",
-   // 排序字段
-   fcOrderby: "",
-   // 模式 false为单选，true为多选
-   fcMode: true,
-   // 展开子节点
-   fcOpenChild: false,
-   // 是否显示线条
-   fcShowLine: true,
-   //是否可拖拽
-   fcAllowDrag: true
- };
+  treeOptions: TreeOptions = {
+    //元数据id
+    fcAppid: "SYSMENU",//元数据id
+    //树结构节点显示内容
+    fcLabel: ':{MENUNAME}::{MENUID}',//支持:{参数名称}
+    // 关联父节点字段名称
+    fcParentCode: 'PARENT',
+    // 当前节点字段名称
+    fcChildCode: 'MENUID',
+    // 叶子节点字段名称
+    fcLeafCode: 'HASCHILD',
+    // 根节点条件
+    fcTopWhere: "PARENT is null or PARENT=''",
+    // 展开条件
+    fcExpWhere: "PARENT=':{MENUID}'",
+    // 排序字段
+    fcOrderby: "",
+    // 模式 false为单选，true为多选
+    fcMode: true,
+    // 展开子节点
+    fcOpenChild: false,
+    // 是否显示线条
+    fcShowLine: true,
+    //是否可拖拽
+    fcAllowDrag: true
+  };
   //text
   content: string = '文本内容';
   addonbefore: string = '';

@@ -15,6 +15,13 @@ import { Router } from '@angular/router';
   `]
 })
 export class TlbformComponent extends ComponentParent {
+   //自定义下拉单选
+   comboValue: any = { "label": "A", "value": "a", "disabled": false };
+   comboOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
+   //数值
+   doubleValue: number = 5.5;
+    //数值
+  longValue: number = 5;
   //basicview
   basicview : string = `
   <fc-tlbform [fcAppid]="'SYSCOMPONENT'" (fcEvent)="ourtlbform($event)"></fc-tlbform>

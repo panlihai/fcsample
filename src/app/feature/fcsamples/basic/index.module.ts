@@ -62,6 +62,7 @@ import { ChatComponent } from './chat/chat.component';
 import { TreeselectComponent } from './treeselect/treeselect.component';
 import { CascaderComponent } from './cascader/cascader.component';
 import { LabelComponent } from './label/label.component';
+import { ChartComponent } from './chart/chart.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -94,6 +95,7 @@ import { LabelComponent } from './label/label.component';
     CarouselComponent,
     CheckComponent,
     ChosenComponent,
+    ChartComponent,
     ComboComponent,
     DateComponent,
     DatetimeComponent,

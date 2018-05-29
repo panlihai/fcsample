@@ -14,7 +14,7 @@ import { FCEVENT } from 'fccomponent/fc';
 })
 export class TlblistComponent extends ComponentParent {
   //basicview
-  basicvie : string = `
+  basicview : string = `
   <fc-tlblist [fcAppid]="'SYSCOMPONENT'" (fcEvent)="tlblistEvent($event)"></fc-tlblist>
   <div style="height: 200px;">
     <fc-listdata [fcAppid]="'SYSCOMPONENT'" [fcOption]="fcListdataOptions" [fcCondition]="_condition"></fc-listdata>

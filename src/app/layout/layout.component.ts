@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { ProvidersService, MessageService } from 'fccore';
+import { LayoutService } from '../system/services/layout.service';
 import { FcmodalconfirmComponent } from 'fccomponent/fcmodal/fcmodalconfirm.component';
 import { FCEVENT } from 'fccomponent/fc';
 import { NavsideOptions } from 'fccomponent/fcnav/fcnavside.component';
 import { MenuOptions } from 'fccomponent/fcnav/fcnavmenu.component';
 import { FcTaboptions } from 'fccomponent/fcnav/fcnavtab.component';
-import { LayoutService } from '../system/services/layout.service';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -62,6 +62,16 @@ import { LayoutService } from '../system/services/layout.service';
     padding-left:10px;
     box-sizing:border-box;
   }
+  .body-mask {
+    width:100%;
+    height:100%;
+    background-color:#108ee9;
+    opacity:0.4;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:9;
+  }
   `]
 })
 export class LayoutComponent implements OnInit {
@@ -91,7 +101,8 @@ export class LayoutComponent implements OnInit {
   _navTabSelectedIndex: string = "0";
   constructor(private _router: Router,
     private _providers: ProvidersService,
-    private mainService: LayoutService
+    private mainService: LayoutService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.mainService.init();
     //订阅消息
@@ -100,14 +111,37 @@ export class LayoutComponent implements OnInit {
     this._navSideOption = this.mainService.initNavSideOptions();
     this._tabs = this.mainService._tabs;
     this._router.navigate(["/" + environment.pid.toLocaleLowerCase() + "/home"]);
+    // //路由事件
+    // this._router.events.filter(event => event instanceof NavigationEnd)
+    //   .map(() => this.activatedRoute)
+    //   .map(route => {
+    //     while (route.firstChild) route = route.firstChild;
+    //     return route;
+    //   })
+    //   .filter(route => route.outlet === 'primary')
+    //   .mergeMap(route => route.data)
+    //   .subscribe((event) => {
+    //     var menu = { module: event["module"]};
+    //     this.mainService.providers.logService.debug(menu);
+    //   });
   }
   ngOnInit() {
     this.mainService.getMessage().subscribe(res => {
       if (res[0].CODE === '0') {
-        this._navSideOption.fcValues1 = res[0].DATA;
+        this._navSideOption.fcValues1 = res[1].DATA;
+        this._navSideOption.fcValues1.forEach(element => {
+          if (element.TS !== null && element.TS !== '') {
+            element.TS = this.mainService.providers.commonService.timestampFormat(Number.parseInt(element.TS) * 1000, 'yyyy-MM-dd hh:mm:ss') + "";
+          }
+        })
       }
       if (res[1].CODE === '0') {
-        this._navSideOption.fcValues2 = res[1].DATA;
+        this._navSideOption.fcValues2 = res[0].DATA;
+        this._navSideOption.fcValues2.forEach(element => {
+          if (element.TS !== null && element.TS !== '') {
+            element.TS = this.mainService.providers.commonService.timestampFormat(Number.parseInt(element.TS) * 1000, 'yyyy-MM-dd hh:mm:ss') + "";
+          }
+        })
       }
     });
     this._navTabSelectedIndex = this.mainService._selectedIndex;
@@ -172,7 +206,7 @@ export class LayoutComponent implements OnInit {
         break;
       case 'select':
         //导航并存储列表
-        this.mainService.storeMenu(this._router, event.param,{});
+        this.mainService.storeMenu(this._router, event.param, {});
         this._navTabSelectedIndex = this.mainService._selectedIndex;
         this._navmenuSelected = this.mainService._navmenuSelected;
         break;
@@ -192,7 +226,27 @@ export class LayoutComponent implements OnInit {
         break;
     }
   }
-
+  /**
+    * 侧边栏页面事件
+    * @param event tab页面事件
+    */
+  navsideEvent(event: FCEVENT): void {
+    switch (event.eventName) {
+      case 'closed':
+        this.mainService.navRemoveMenu(this._router, event.param);
+        break;
+      case 'click':
+        this.mainService.navMessage(this._router, event.param);         
+        /* event.param.ISREAD="Y";
+        this._navSideOption.fcValues1.forEach(item,index=>{
+            if(item.ISREAD="Y"){
+              this._navSideOption.fcValues1.slice(index,index+1);
+            }
+        }) */
+        break;
+    }
+  }
+ 
   /**
    * 消息处理
    * @param message 消息对象

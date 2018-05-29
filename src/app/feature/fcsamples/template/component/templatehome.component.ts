@@ -185,7 +185,7 @@ export class TemplatehomeComponent {
    * 柱状图事件
    * @param event 
    */
-  chatbarEvent(event: FCEVENT) {
+  chartbarEvent(event: FCEVENT) {
     switch (event.eventName) {
       case 'hover':
         break;
@@ -309,5 +309,4 @@ export class TemplatehomeComponent {
 
     }
   }
-  
 }

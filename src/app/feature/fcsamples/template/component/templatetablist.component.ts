@@ -49,10 +49,15 @@ export class TemplatetablistComponent extends ComponentParent {
   tabmain = [
     { name: '版本列表', icon: '', disabled: false },
     { name: '版本详细', icon: '', disabled: false },
-  ]
+  ];
+  listDataCustomCondition:'';
  //自定义下拉单选
  anyValue: any = { "label": "A", "value": "a", "disabled": false };
  anyOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
+   //自定义下拉单选
+   comboValue: any = { "label": "A", "value": "a", "disabled": false };
+   comboOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];
+  
  //多选
  checkValue: string = 'a';
  checkOptions: any[] = [{ icon: '', label: 'A', value: 'a' }, { icon: '', label: 'B', value: 'b' }, { icon: '', label: 'C', value: 'c' }];

@@ -1,10 +1,11 @@
-/* 	元数据 */
+﻿/* 	元数据 */
 import { Injectable } from '@angular/core';
-import { ProvidersService, SysmessageService, Sysmenu, FCCONFIG } from 'fccore';
+import { ProvidersService, SysmessageService, Sysmenu, FCCONFIG, Sysmessage } from 'fccore';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { element } from 'protractor';
 import { FcTaboptions } from 'fccomponent/fcnav/fcnavtab.component';
+import { FcRouteReuseStrategy } from './routereusestrategy.service';
 @Injectable()
 export class LayoutService {
     //点击的所有tab页面。
@@ -13,7 +14,7 @@ export class LayoutService {
     _selectedIndex: string;
     //是否被选中
     _navmenuSelected: boolean;
-    constructor(private providers: ProvidersService, private sysmessageService: SysmessageService) {
+    constructor(public providers: ProvidersService, private sysmessageService: SysmessageService) {
 
     }
     init() {
@@ -29,12 +30,13 @@ export class LayoutService {
     initNavSideOptions(): any {
         return {
             fcAppid: '',
-            fcLabelCode1: '全部消息',
-            fcLabelCode2: '未读消息',
+            fcLabelCode1: '未读消息',
+            fcLabelCode2: '全部消息',
             fcTitleCode: 'TITLE',
             fcSmarkCode: 'CONTENT',
-            fcColorCode: 'TYPE',
-            fcReadCode: 'ISREAD'
+            fcColorCode: 'TYPE',//消息等级分为一般(normal)、紧急(waring)、危险(danger)
+            fcReadCode: 'ISREAD',
+            fcTimeCode: 'TS'
         };
     }
     /**
@@ -62,10 +64,21 @@ export class LayoutService {
             this.providers.msgService.endAntLoading();
         }).catch((error) => {
             console.error(error);
+            // this.providers.cacheService.setS('error',error);
             this.providers.msgService.endAntLoading();
+            router.navigate(['/system/error']);
         });;
     }
+    /**
+     * 存储菜单并跳转
+     * @param router 
+     * @param menu 
+     * @param param 
+     */
     storeMenu(router: Router, menu: any, param = {}) {
+        if (menu.MENUTYPE === 'OUTURL') {
+            return;
+        }
         if (param) {
             menu.PARAM = param;
         }
@@ -104,28 +117,67 @@ export class LayoutService {
             // 开启加载条
             this.providers.msgService.startAntLoading();
             router.navigate(["/" + menu.PID.toLowerCase() + "/" + menu.ROUTER], {
-                queryParams: {refresh:refresh,ID: menu.ID, MENUID: menu.MENUID, ROUTER: menu.ROUTER, PID: menu.PID, APPID: menu.APPID, PARAM: menu.param }
-            })
-            .then(() => {
+                queryParams: { refresh: refresh, ID: menu.ID, MENUID: menu.MENUID, ROUTER: menu.ROUTER, PID: menu.PID, APPID: menu.APPID, PARAM: menu.param }
+            }).then(() => {
                 this.providers.msgService.endAntLoading();
-            })
-            .catch((error) => {
-                console.error(error);
+            }).catch((error) => {
+                console.log(error);
+                // this.providers.cacheService.setS('error',error);
                 this.providers.msgService.endAntLoading();
+                router.navigate(['/system/error']);
             });
         } else if (menu.MENUTYPE === 'INURL') {
             // 开启加载条
             this.providers.msgService.startAntLoading();
             router.navigate(["/" + menu.PID.toLowerCase() + "/" + menu.ROUTER], {
-                queryParams: {refresh:refresh,ID: menu.ID, MENUID: menu.MENUID, ROUTER: menu.ROUTER, PID: menu.PID, APPID: menu.APPID, PARAM: menu.param }
+                queryParams: { refresh: refresh, ID: menu.ID, MENUID: menu.MENUID, ROUTER: menu.ROUTER, PID: menu.PID, APPID: menu.APPID, PARAM: menu.param }
             }).then(() => {
                 this.providers.msgService.endAntLoading();
             }).catch((error) => {
-                console.error(error);
+                console.log(error);
                 this.providers.msgService.endAntLoading();
+                // this.providers.cacheService.setS('error',error);
             });
         } else {
             window.open(menu.MENUURL);
+        }
+    }
+    /**
+     * 跳转至消息路由，当SOURCEAID，SOURCEID有匹配的路由时直接跳转，否则跳转至sysmessageDetail路由
+     * @param router 路由参数
+     * @param msg 消息体
+     *  
+     */
+    navMessage(router: Router, msg: Sysmessage) {
+        let sourceAid = msg.SOURCEAID ? msg.SOURCEAID : '';
+        let menu = this.findMenuByRouter(this.providers.menuService.menus, sourceAid.toLowerCase() + 'Detail');
+        if (menu) {
+            menu['param'] = msg.ID;
+            this.storeMenu(router, menu);
+            this.providers.commonService.event("selectedMenu", menu);
+        } else {
+            menu = {
+                APPFILTER: '',
+                PARENT: '',
+                SORT: '',
+                ENABLE: 'Y',
+                MENUICON: 'fc-icon-information',
+                PID: this.sysmessageService.moduleId,
+                HASCHILD: 'N',
+                MENUTYPE: 'APP',
+                ID: 'sysmessageDetail',
+                REMARK: '',
+                MENUID: 'sysmessageDetail',
+                ROUTER: 'sysmessageDetail',
+                WXMENU: '',
+                APPID: msg.SOURCEAID,
+                MENUNAME: '消息详情',
+                DESCRIPTION: ''
+            };
+            menu['param'] = msg.ID;
+            this.storeMenu(router, menu, { ID: msg.ID });
+            this.providers.commonService.event("selectedMenu", menu);
+
         }
     }
     /**
@@ -143,15 +195,17 @@ export class LayoutService {
             item.index = tempIndex++;
         });
         this._selectedIndex = Number(this._selectedIndex) - 1 + "";
+        this.providers.cacheService.setS('removeRouter',menu);
         this.storeMenu(router, this._tabs[this._selectedIndex].content);
+        
     }
     /**
-     * 跳转至路由根据菜单id
+     * 关闭路由并删除路由表
      * @param router 路由
-     * @param menuId 菜单id
+     * @param menu 关闭的路由菜单
      */
     navToByMenuId(router: Router, menuId: string) {
-        let menu = this.findMenuByMenuId(this.providers.menuService.menus, menuId);
+        let menu = this.findMenuByRouter(this.providers.menuService.menus, menuId);
         if (menu) {
             this.storeMenu(router, menu);
             this.providers.commonService.event("selectedMenu", menu);
@@ -164,16 +218,16 @@ export class LayoutService {
      * @param menus 
      * @param menuId 
      */
-    findMenuByMenuId(menus: any[], menuId: string): Sysmenu {
+    findMenuByRouter(menus: any[], router: string): Sysmenu {
         let menu: Sysmenu;
         let i = 0;
         do {
             let item = menus[i];
-            if (item.ROUTER && item.ROUTER === menuId) {
+            if (item.ROUTER && item.ROUTER === router) {
                 menu = item;
                 break;
             } else if (item.P_CHILDMENUS && item.P_CHILDMENUS.length !== 0) {
-                menu = this.findMenuByMenuId(item.P_CHILDMENUS, menuId);
+                menu = this.findMenuByRouter(item.P_CHILDMENUS, router);
                 if (menu) {
                     break;
                 }

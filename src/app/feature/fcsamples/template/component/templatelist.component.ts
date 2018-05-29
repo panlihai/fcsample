@@ -9,6 +9,7 @@ import { FCEVENT } from 'fccomponent/fc';
   `]
 })
 export class TemplatelistComponent extends ComponentParent {
+  listDataCustomCondition:'';
   //列表分页
   fcListdataOptions = {
     //皮肤默认为bootstrap风格

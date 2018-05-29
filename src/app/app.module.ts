@@ -12,7 +12,8 @@ import {
   FcalertModule,
   FclayoutModule,
   FclistModule,
-  FcchartModule
+  FcchartModule,
+  FcprogressModule
 } from 'fccomponent';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
@@ -47,7 +48,8 @@ import { FccoreModule, MessageService } from 'fccore';
     FclayoutModule,
     FclistModule,
     FcmodalModule,
-    FcchartModule
+    FcchartModule,
+    FcprogressModule
   ],
   declarations: [
     AppComponent,

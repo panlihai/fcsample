@@ -21,7 +21,7 @@
                         <div class="subtitle-item">
                             <label>收款状态:</label>
                             <span>
-                                <fc-tag [fcTitle]="'未提交'" [fcColor]="'red'"></fc-tag>
+                                <fc-tag [fcLabel]="'未提交'" [fcColor]="'red'"></fc-tag>
                             </span>
                         </div>
                     </div>
@@ -133,11 +133,11 @@
                                 <fc-radio [fcLabel]="'单选'" [(ngModel)]="radioValue" [fcOption]="radioOptions" name="radioname"></fc-radio>
                             </div>
                             <div class="list-search-every list-search-every5">
-                                <fc-tag fcTitle="进行中" fcColor="blue"></fc-tag>
-                                <fc-tag fcTitle="待进行" fcColor="green" fcIcon="fc-line"></fc-tag>
-                                <fc-tag fcTitle="默认" fcColor="cyan" fcIcon="fc-line"></fc-tag>
-                                <fc-tag fcTitle="滞缓" fcColor="orange" fcIcon="fc-line"></fc-tag>
-                                <fc-tag fcTitle="停用" fcColor="red" fcIcon="fc-line"></fc-tag>
+                                <fc-tag fcLabel="进行中" fcColor="blue"></fc-tag>
+                                <fc-tag fcLabel="待进行" fcColor="green" fcIcon="fc-line"></fc-tag>
+                                <fc-tag fcLabel="默认" fcColor="cyan" fcIcon="fc-line"></fc-tag>
+                                <fc-tag fcLabel="滞缓" fcColor="orange" fcIcon="fc-line"></fc-tag>
+                                <fc-tag fcLabel="停用" fcColor="red" fcIcon="fc-line"></fc-tag>
                             </div>
                         </form>
                         <div style="width:100%;height:550px;" fccontent>

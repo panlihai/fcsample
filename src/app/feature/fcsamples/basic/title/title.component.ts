@@ -36,7 +36,7 @@ export class TitleComponent extends ComponentParent {
         </div>
         <div class="subtitle-item">
             <label>收款单状态:</label>
-            <fc-tag fcTitle="未提交" fcColor="blue"></fc-tag>
+            <fc-tag fcLabel="未提交" fcColor="blue"></fc-tag>
         </div>
     </div>
   </fc-title>

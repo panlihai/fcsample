@@ -186,11 +186,17 @@ import { ComponentService } from '../../services/component.service';
   `]
 })
 export class TemplatesigninComponent extends ComponentParent {
+    hasError:'';
     radioValueSingle: string = 'a';
     radioOption: any[] = [{ icon: '', label: 'A', value: 'a' }];
     radioValue: string = 'a';
     radioOptions: any[] = [{ icon: '', label: 'A', value: 'a' }];
   addonbefore: string = 'github.com/panlihai/fcexample/tree/dev';
+  userId:'';
+  password:'';
+  login(){
+      
+  }
   constructor(public mainService: ComponentService) {
     super('SYSCOMPONENT', mainService);
   }

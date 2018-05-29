@@ -46,7 +46,7 @@ export class TabmainComponent extends ComponentParent {
   `
   //buttonview显示滑动按钮
   buttonview : string = `
-  <fc-tabmain [fcTabs]="tabmain" [fcSelectedIndex]="tabIndex"[fcShowPagination]="true">
+  <fc-tabmain [fcTabs]="tabmain" [fcSelectedIndex]="tabIndex" [fcShowPagination]="true">
       <div fccontent1>fccontent1</div>
       <div fccontent2>fccontent2</div>
       <div fccontent3>fccontent3</div>
